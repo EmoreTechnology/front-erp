@@ -12,7 +12,7 @@ import iconLinkedin from '../../Assets/linkedin-icon.png';
 function Home() {
   return (
     <AppStyled>
-      <div className="header" style={{ backgroundImage: `url(${HomeBack})` }}>
+      <div className="header" style={{ backgroundImage: `url(${HomeBack})`}}>
         <div className="options">
           <p>Login</p>
           <p>About us</p>

@@ -13,7 +13,7 @@ export const AppStyled = styled.div`
   .header {
     display: flex;
     flex-direction: column;
-    height: 700px;
+    height: 570px;
     width: 100%;
 
     .options{
@@ -25,16 +25,15 @@ export const AppStyled = styled.div`
       background-color: black;
       
       p {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         margin-right: 5rem;
       }
     }
 
     img {
-      width: 25rem;
-      height: 25rem;
-      margin-left: 8rem;
-      margin-top: 6rem;
+      width: 20rem;
+      height: 20rem;
+      margin: 5rem;
     }  
   }
 
@@ -43,17 +42,19 @@ export const AppStyled = styled.div`
     flex-direction: row;
     align-items: center;
     margin: 2.6rem 0 0 0;
-    height: 18rem;
-    width: 82rem;
+    height: 15rem;
+    width: 71rem;
     border: 1px solid #fff;
     border-radius: 1.8rem;    
     img {
       margin 2.5rem;
+      width: 300px;
+      height: 164px;
     }
 
     p {
-      font-size: 2.2rem;
-      margin-right: 20rem;
+      font-size: 1.8rem;
+      margin-right: 15rem;
       margin-left: 10rem;
     }
   }
@@ -63,16 +64,18 @@ export const AppStyled = styled.div`
     flex-direction: row;
     align-items: center;
     margin: 2.6rem 0 0 0;
-    height: 24rem;
-    width: 82rem;
+    height: 15rem;
+    width: 71rem;
     border: 1px solid #fff;
     border-radius: 1.8rem;    
     img {
       margin 2.5rem;
+      width: 300px;
+      height: 164px;
     }
     
     p {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       margin-right: 10rem;
       margin-left: 10rem;
     }
@@ -83,16 +86,18 @@ export const AppStyled = styled.div`
     flex-direction: row;
     align-items: center;
     margin: 2.6rem 0 0 0;
-    height: 26rem;
-    width: 82rem;
+    height: 15rem;
+    width: 71rem;
     border: 1px solid #fff;
     border-radius: 1.8rem;    
     img {
       margin 2.5rem;
+      width: 300px;
+      height: 164px;
     }
     
     p {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       margin-right: 9rem;
       margin-left: 5rem;
     }
@@ -102,8 +107,8 @@ export const AppStyled = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: end;
-    height: 18rem;
-    width: 82rem;
+    height: 15rem;
+    width: 71rem;
     margin: 2.6rem 0 0 0;
     border: 1px solid #fff;
     border-radius: 1.8rem;   
@@ -113,7 +118,7 @@ export const AppStyled = styled.div`
     }
     
     p {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       margin: 3rem;
     }
     
