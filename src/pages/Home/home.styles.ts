@@ -114,7 +114,7 @@ export const AppStyled = styled.div`
     border-radius: 1.8rem;   
     
     h1 {
-      font-size: 4rem;
+      font-size: 3rem;
     }
     
     p {
@@ -128,25 +128,36 @@ export const AppStyled = styled.div`
   }
   .section5 {
     display: flex;
-    flex-direction: row
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    margin: 2.6rem 0 0 0;
-    height: 18rem;
-    width: 82rem;
+    justify-content: space-between;
+    margin: 6rem 0 0 0;
+    height: 15rem;
+    width: 71rem;
     border: 1px solid #fff;
     border-radius: 1.8rem;  
     
     .left {
       display: flex;
       flex-direction: column;
+      margin-left: 5rem;
     }
 
     .right {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      height: 10.8rem;
+    }
+
+    img {
+      margin: 3rem;
+      height: 90px;
+      width: 90px;
+    }
+
+    p {
+      font-size: 1.8rem;
+      margin: 1rem;
     }
   }
 `;
