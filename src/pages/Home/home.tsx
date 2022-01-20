@@ -24,6 +24,8 @@ function Home() {
         <div className="footer">
           <p>Fale Conosco</p>
 
+          <div className="line"></div>
+
           <div className="contacts">
             <img className="wpp" src={wpp} alt="" />
             <img src={linkedin} alt="" />
