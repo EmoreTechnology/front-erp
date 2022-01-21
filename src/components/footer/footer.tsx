@@ -10,7 +10,7 @@ function Footer() {
 
         <p>Fale Conosco</p>
 
-        <div className="line"></div>
+        <span className="line"></span>
 
         <div className="contacts">
           <img className="wpp" src={wpp} alt="" />

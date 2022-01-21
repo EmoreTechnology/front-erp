@@ -31,19 +31,6 @@ export const AppStyled = styled.div`
     justify-content: center;
   }
 
-  .section2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 650px;
-
-    p {
-      font-size: 48px;
-      font-weight: 500;
-    }
-  }
-
   img {
     width: 100%;
   }
