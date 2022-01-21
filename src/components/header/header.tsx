@@ -1,18 +1,13 @@
 import React from "react";
-import { HeaderStyled } from './footer.styles.ts';
+import { HeaderStyled } from './header.styles.ts';
 
 function Header() {
   return (
     <HeaderStyled>
-      <div className="footer">
+      <div className="container">
 
-        <p>Fale Conosco</p>
-
-        <span className="line"></span>
-
-        <div className="contacts">
-          <img className="wpp" src={wpp} alt="" />
-          <img src={linkedin} alt="" />
+        <div className="header">
+          <p>Login</p>
         </div>
 
       </div>
