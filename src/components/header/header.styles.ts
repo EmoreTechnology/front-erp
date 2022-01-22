@@ -1,3 +1,4 @@
+import { AppStyled } from './../../pages/Home/home.styles';
 import styled from 'styled-components';
 
 export const HeaderStyled = styled.div`
@@ -13,5 +14,18 @@ export const HeaderStyled = styled.div`
         margin: 30px 45px 30px 0px;
         justify-content: flex-end;
       }
+
+      button {
+        display: flex;
+        border: none;
+        color: white;
+        font-size: 16px;
+
+        span {
+          color: white;
+          font-size: 16px;
+        }
+      }
+
 
 `;

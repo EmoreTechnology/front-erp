@@ -25,6 +25,7 @@ function Home() {
         <Slide />
 
         <Footer />
+        
       </div>
 
     </AppStyled>
