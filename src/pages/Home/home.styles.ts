@@ -18,13 +18,6 @@ export const AppStyled = styled.div`
 	  width:100%;
   }
 
-  .header {
-    display: flex;
-    width: 100%;
-    margin: 30px 45px 30px 0px;
-    justify-content: flex-end;
-  }
-
   .section1 {
     display: flex;
     align-items: center;
