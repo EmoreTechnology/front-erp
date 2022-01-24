@@ -1,5 +1,5 @@
 import React from "react";
-import { FooterStyled } from './footer.styles.ts';
+import { FooterStyled } from './footer.styles';
 import wpp from "../../Assets/whatsapp.png";
 import linkedin from "../../Assets/linkedin.png";
 

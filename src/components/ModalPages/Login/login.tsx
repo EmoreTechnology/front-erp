@@ -1,5 +1,5 @@
 import React from "react";
-import { LoginStyled } from './login.styles.ts';
+import { LoginStyled } from './login.styles';
 
 //assets
 import Header from "../../../components/ModalComponets/header";
@@ -24,7 +24,7 @@ function Login({ children }) {
 
           <div className="section2">
             <label> Senha:</label>
-            <Input type="email" appearance="#fff" />
+            <Input type="password" appearance="#fff" />
           </div>
 
           <p>Esqueci minha senha</p>

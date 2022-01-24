@@ -1,6 +1,6 @@
 import React, { Children, useState } from 'react';
 import Login from '../ModalPages/Login/login';
-import { HeaderStyled } from './header.styles.ts';
+import { HeaderStyled } from './header.styles';
 
 function Header() {
 

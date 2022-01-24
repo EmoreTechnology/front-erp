@@ -34,6 +34,16 @@ export const LoginStyled = styled.div`
           width: 100%;
           max-width: 750px;
 
+          @media (max-width: 360px) {
+            display: flex;
+            max-width: 238px;
+            margin-top: 32px;
+          }
+
+          input {
+            height: 32px;
+          }
+
           .section1{
             display:flex;
             align-items: start;
@@ -68,6 +78,10 @@ export const LoginStyled = styled.div`
           justify-content: center;
           width: 100%;
           margin: 210px;
+
+          @media (max-width:360px) {
+            
+          }
 
           p {
             display: flex;
