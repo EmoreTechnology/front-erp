@@ -1,13 +1,20 @@
 import React from "react";
 import { AppStyled } from './home.styles.ts';
+
+//Assets
 import logo from "../../Assets/logo.png";
-import Footer from "../../components/Footer/footer";
+
+//Components
+import Footer from "../../components/footer/footer";
+import Slide from "../../components/slide/slide";
+
 
 
 function Home() {
   return (
     <AppStyled>
       <div className="container">
+        
         <div className="header">
           <p>Login</p>
         </div>
@@ -16,10 +23,8 @@ function Home() {
           <img src={logo} alt="" />
         </div>
 
-        <div className="section2">
-          <p>slide</p>
-        </div>
-
+        <Slide />
+        
         <Footer />
       </div>
 
