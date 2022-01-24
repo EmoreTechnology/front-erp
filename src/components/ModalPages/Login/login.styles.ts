@@ -82,11 +82,24 @@ export const LoginStyled = styled.div`
           label{
             display: flex;
             margin: 0 0 8px 5px;
+
+            @media (max-width:1024px){
+              font-size: 14px;
+            }
+            @media (max-width:360px){
+              font-size: 12px;
+            }
           }
           
           p {
             display: flex;
             text-align: flex-end;
+            @media (max-width:1024px){
+              font-size: 14px;
+            }
+            @media (max-width:360px){
+              font-size: 12px;
+            }
           }
           
         } 
@@ -125,6 +138,10 @@ export const LoginStyled = styled.div`
           
           p {
             display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 80%;
             background-color: #fff;
             color: black;
           }
@@ -149,6 +166,9 @@ export const LoginStyled = styled.div`
             display:flex;
             width: 100%;
             padding: 16px;
+            @media (max-width:1024px) {
+              justify-content: end;
+            }
           }
         }
         

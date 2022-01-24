@@ -6,10 +6,9 @@ function Header() {
 
 const [isModalVisible, setIsModalVisible] = useState(false);
 
-
   return (
     <HeaderStyled>
-      <div className="container" >
+      <div className="container">
 
         <div className="header">
           <button  className="button1" onClick={() => setIsModalVisible(true)} >
@@ -17,7 +16,9 @@ const [isModalVisible, setIsModalVisible] = useState(false);
           </button>
 
           {isModalVisible ? 
-            <Login onClick={() => setIsModalVisible(true)} />
+            <Login >
+              <button onClick={() => setIsModalVisible(false)}>Close</button>
+            </Login>
           : null}
 
         </div >

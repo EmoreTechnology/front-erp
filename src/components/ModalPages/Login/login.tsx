@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from 'react';
 import { LoginStyled } from './login.styles';
 
 import { Input } from "../../Input/input";
 import { ButtonLogin } from "../../Button/buton";
 import logo from "../../../Assets/logo.png";
+import Cad from "../Cadastro/cadastro";
 
 
-function Login() {
+function Login({ children }: any) {
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
   return (
     <LoginStyled >
       <div className="container">
+
+        <div className="close">{children}</div>
 
         <div className="header login">
             <img src={logo} alt="" />
@@ -32,15 +38,22 @@ function Login() {
         <div className="footer login">
 
           <div className="first">
-            <ButtonLogin appeareance="#fff">
+            <ButtonLogin appeareance="#fff" background-color="#fff">
               <p>Entrar</p>
             </ButtonLogin>
           </div>
 
           <div className="second">
             <ButtonLogin appeareance="#fff">
-              <p>Cadastrar</p>
+              <p onClick={() => setIsModalVisible(true)}>Cadastrar</p>
             </ButtonLogin>
+
+            {isModalVisible ?
+              <Cad >
+                <button className="close" onClick={() => setIsModalVisible(false)}>Close</button>
+              </Cad>
+              : null}
+
           </div>
 
         </div>
