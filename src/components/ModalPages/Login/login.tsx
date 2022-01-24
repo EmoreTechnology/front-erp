@@ -1,20 +1,19 @@
 import React from "react";
 import { LoginStyled } from './login.styles';
 
-//assets
-import Header from "../../../components/ModalComponets/header";
 import { Input } from "../../Input/input";
 import { ButtonLogin } from "../../Button/buton";
+import logo from "../../../Assets/logo.png";
 
 
-function Login({ children }) {
+function Login() {
   return (
     <LoginStyled >
       <div className="container">
 
-        <div className="close">{children}</div>
-
-        <Header />
+        <div className="header login">
+            <img src={logo} alt="" />
+        </div>
 
         <div className="form">
           <div className="section1">

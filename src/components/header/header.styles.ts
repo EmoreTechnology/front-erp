@@ -20,6 +20,7 @@ export const HeaderStyled = styled.div`
         border: none;
         color: white;
         font-size: 16px;
+        background-color: black;
 
         span {
           color: white;
