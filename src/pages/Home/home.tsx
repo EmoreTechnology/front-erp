@@ -15,9 +15,9 @@ function Home() {
   return (
     <AppStyled>
       <div className="container">
-        
+
         <Header />
-        
+
         <div className="section1">
           <img src={logo} alt="" />
         </div>
@@ -25,6 +25,7 @@ function Home() {
         <Slide />
 
         <Footer />
+
       </div>
 
     </AppStyled>
