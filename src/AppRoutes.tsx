@@ -15,12 +15,15 @@ import { AuthContext } from "./contexts/auth";
 
 const AppRoutes = () => {
 
-  const [user , setUser] = useState(null);
+  const [user, setUser] = useState<any>(null);
+  // const [loggedIn, setLoggedIn] = useState<boolean>(false);
 
-  const login = (email, password) => {
-    console.log("login", { email, password});
-    setUser({ id: "123", email });
+  const login = ({ email, password }: any) => {
+    console.log("login", { email, password });
+    setUser({ id: '1', email });
   };
+
+  const loggedIn = false;
 
   const logout = () => {
     console.log("logout");
@@ -30,11 +33,14 @@ const AppRoutes = () => {
   return (
 
     <Router>
-      <AuthContext.Provider value={{authenticated:
-        !!user, user, login}}>
+      <AuthContext.Provider value={{
+        authenticated:
+          !!user, user, login
+      }}>
         <Routes>
-          <Route exact path="/Home" element={<Home/>} />
-          <Route exact path="/Logged" element={<Logged/>} />
+          <Route path="/" element={<Navigate replace to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/Logged" element={<Logged />} />
         </Routes>
       </AuthContext.Provider>
     </Router>
