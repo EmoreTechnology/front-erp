@@ -1,5 +1,5 @@
 import React from "react";
-import { AppStyled } from './home.styles.ts';
+import { AppStyled } from './home.styles';
 
 //Assets
 import logo from "../../Assets/logo.png";
@@ -8,7 +8,6 @@ import logo from "../../Assets/logo.png";
 import Footer from "../../components/footer/footer";
 import Slide from "../../components/slide/slide";
 import Header from "../../components/header/header";
-
 
 
 function Home() {

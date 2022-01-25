@@ -12,7 +12,7 @@ export const ButtonStyled = styled.button`
   border: 1px solid rgba(0, 0, 0, 0.05); 
   border-radius: 18px;   
   cursor: pointer;
-  background-color: ${(props: ButtonProps) => props.appeareance};
+  background-color: white;
 
 `;
 
