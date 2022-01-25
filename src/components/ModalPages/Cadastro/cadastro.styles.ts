@@ -23,32 +23,35 @@ export const CadastroStyled = styled.div`
       background-color: black;
       color: white;
       width: 80%;
-      padding: 60px;
 
       .close{
         align-items: center;
         justify-content: center;
-        color: black;
         height:10px;
         width:50px;
         border-radius: 8px;
+
+        p {         
+          background-color: black;
+          color: #fff;
+          font-size: 18px;
+        }
       }
 
-
-        .header.login {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          margin: 0;
+      .header.login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 15px;
           
-          img {
-            width: 100%;
-            max-width: 787px;
-            max-height: 376px;
-            margin: 0px;
-          }
+        img {
+          width: 100%;
+          max-width: 787px;
+          max-height: 376px;
+          margin: 0px;
         }
+      }
 
       
       .register {
@@ -58,6 +61,7 @@ export const CadastroStyled = styled.div`
         align-items: center;
         flex-direction: column;
         justify-content: center;
+        margin-top: 40px;
         
         input {
           width: 100%;
@@ -89,11 +93,10 @@ export const CadastroStyled = styled.div`
             font-size: 12px;
           }
         }
-
       }
       .registrar{
         display: flex;
-        margin-top: 20px;
+        margin: 25px 0 60px 0;
         max-width: 174px;
         width: 100%;
       }

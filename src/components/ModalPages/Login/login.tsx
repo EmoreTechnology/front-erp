@@ -4,7 +4,7 @@ import { LoginStyled } from './login.styles';
 import { Input } from "../../Input/input";
 import { ButtonLogin } from "../../Button/buton";
 import logo from "../../../Assets/logo.png";
-import Cad from "../Cadastro/cadastro";
+import Register from "../Cadastro/cadastro";
 
 
 function Login({ children }: any) {
@@ -12,7 +12,7 @@ function Login({ children }: any) {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   return (
-    <LoginStyled >
+    <LoginStyled>
       <div className="container">
 
         <div className="close">{children}</div>
@@ -39,21 +39,19 @@ function Login({ children }: any) {
 
           <div className="first">
             <ButtonLogin appeareance="#fff" background-color="#fff">
-              <p>Entrar</p>
+              <span>Entrar</span>
             </ButtonLogin>
           </div>
 
           <div className="second">
-            <ButtonLogin appeareance="#fff">
-              <p onClick={() => setIsModalVisible(true)}>Cadastrar</p>
+            <ButtonLogin appeareance="#fff" background-color="#fff">
+              <span onClick={() => setIsModalVisible(true)}>Cadastrar</span>
             </ButtonLogin>
-
             {isModalVisible ?
-              <Cad >
-                <button className="close" onClick={() => setIsModalVisible(false)}>Close</button>
-              </Cad>
+              <Register>
+                <p className="close" onClick={() => setIsModalVisible(false)}>Close</p>
+              </Register>
               : null}
-
           </div>
 
         </div>

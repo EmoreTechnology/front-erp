@@ -16,11 +16,11 @@ export const LoginStyled = styled.div`
       align-items: center;
       flex-direction: column;
       justify-content: center;
-      padding: 40px;
       border: 1px solid white;
       background-color: black;
       color: white;
       width: 80%;
+      padding: 15px;
 
         .close {
           display: flex;
@@ -49,6 +49,7 @@ export const LoginStyled = styled.div`
           align-items: end;
           width: 100%;
           max-width: 750px;
+          padding: 15px;
 
           input {
             width: 100%;
@@ -66,9 +67,10 @@ export const LoginStyled = styled.div`
             flex-direction: column;
             width: 100%;
             margin-bottom: 100px;
-
+            padding: 10px;
+            
             @media (max-width:768px) {
-              margin-bottom: 46px;
+              margin-bottom: 36px;
             }
           }
           
@@ -77,6 +79,7 @@ export const LoginStyled = styled.div`
             align-items: start;
             flex-direction: column;
             width: 100%;
+            padding: 7px;
           }
           
           label{
@@ -93,7 +96,8 @@ export const LoginStyled = styled.div`
           
           p {
             display: flex;
-            text-align: flex-end;
+            margin: 10px 0 100px 0;
+            
             @media (max-width:1024px){
               font-size: 14px;
             }
@@ -108,16 +112,18 @@ export const LoginStyled = styled.div`
           display: flex;
           flex-direction: row;
           align-items: center;
-          justify-content: center;
+          justify-content: space-between;
           width: 100%;
-          margin: 210px;
+          max-width: 768px;
+          margin-bottom: 20px;
           
           @media (max-width:360px) {
             display: flex;
-            align-items: center;
-            justify-content: center;
             flex-direction: column;  
-            margin: 68px;          
+          }
+          @media (max-width:1024px) {
+            display: flex;
+            justify-content: space-between; 
           }
           
           button {
@@ -128,7 +134,7 @@ export const LoginStyled = styled.div`
               height: 38px;
             }
             @media (max-width:360px) {
-              max-width: 168px;
+              width: 168px;
               height: 38px;
             }
             @media (max-width:1024px) {
@@ -136,12 +142,11 @@ export const LoginStyled = styled.div`
             }
           }
           
-          p {
+          span {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            height: 80%;
             background-color: #fff;
             color: black;
           }
@@ -149,26 +154,17 @@ export const LoginStyled = styled.div`
           .first{
             display:flex;
             width: 100%;
-            justify-content: flex-end;
+            align-items: center;
+            justify-content: center;
             padding: 16px;
-            
-            @media (max-width:360px) {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-            @media (max-width:1024px) {
-              justify-content: start;
-            }
           }
           
           .second{
             display:flex;
             width: 100%;
+            align-items: center;
+            justify-content: center;
             padding: 16px;
-            @media (max-width:1024px) {
-              justify-content: end;
-            }
           }
         }
         

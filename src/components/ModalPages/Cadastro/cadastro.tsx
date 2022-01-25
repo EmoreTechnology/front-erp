@@ -6,15 +6,13 @@ import { ButtonLogin } from "../../Button/buton";
 import logo from "../../../Assets/logo.png";
 
 
-function Cad({ children }: any) {
+function Register({ children }: any) {
 
 
   return (
-    <CadastroStyled >
+    <CadastroStyled>
       <div className="container">
-
         <div className="close">{children}</div>
-
 
         <div className="header login">
           <img src={logo} alt="" />
@@ -46,7 +44,7 @@ function Cad({ children }: any) {
 
         <div className="registrar">
             <ButtonLogin appeareance="#fff" background-color="#fff">
-              <p>Entrar</p>
+              <span>Entrar</span>
             </ButtonLogin>
         </div>
       </div>
@@ -54,4 +52,4 @@ function Cad({ children }: any) {
   );
 }
 
-export default Cad;
+export default Register;

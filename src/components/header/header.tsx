@@ -11,12 +11,12 @@ const [isModalVisible, setIsModalVisible] = useState(false);
       <div className="container">
 
         <div className="header">
-          <button  className="button1" onClick={() => setIsModalVisible(true)} >
+          <button className="button1" onClick={() => setIsModalVisible(true)}>
             <span>Login</span>
           </button>
 
           {isModalVisible ? 
-            <Login >
+            <Login>
               <button onClick={() => setIsModalVisible(false)}>Close</button>
             </Login>
           : null}
