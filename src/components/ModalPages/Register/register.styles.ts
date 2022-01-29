@@ -1,4 +1,4 @@
-import { AppStyled } from './../../../pages/Home/home.styles';
+import { AppStyled } from '../../../pages/Home/home.styles';
 import styled from 'styled-components';
 
 export const CadastroStyled = styled.div`
