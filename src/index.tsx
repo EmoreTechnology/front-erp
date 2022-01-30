@@ -1,33 +1,27 @@
+// Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './pages/Home/home';
-import {mount, route} from 'navi';
-import {Router} from 'react-navi';
-
 import AppRoutes from './AppRoutes';
-import Logged from './pages/homeLogged/logged';
-import Login from './components/ModalPages/Login/login';
-import Register from './components/ModalPages/Register/register';
+import { createServer } from 'miragejs';
 
-const routes = mount({
-  "/": route({
-    title: 'Home',
-    view: <Home />
-  }),
-  "/login": route({
-    title: 'Login',
-    view: <Login />
-  }),
-  "/register": route({
-    title: 'Register',
-    view: <Register />
-  }),
-  "/logged": route({
-    title: 'Logged',
-    view: <Logged />
-  })
+createServer({
+	routes() {
+		this.namespace = 'api';
+		this.get('login', () => {
+			return [
+				{
+					id: 1,
+					email: 'admin',
+					password: '123',
+				}
+			]
+		})
+	}
 })
 
-ReactDOM.render(<Router routes={routes}/>,
-  document.getElementById('root')
+ReactDOM.render(
+	<React.StrictMode>
+		<AppRoutes />
+	</React.StrictMode>,
+	document.getElementById('root')
 );
