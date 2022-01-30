@@ -10,7 +10,6 @@ export const Container = styled.form`
 	color: white;
 	background-color: black;
 	padding: 40px;
-
 	> img.logo {
 		width: 100%;
 		max-width: 450px;
@@ -38,12 +37,10 @@ export const Container = styled.form`
 		display: flex;
 		margin-bottom: 8px;
 		font-size: 12px;
-
 		@media (max-width:1024px){
 			font-size: 14px;
 		}
 	}
-
 	> .button-access {
 		display:flex;
 		justify-content: center;

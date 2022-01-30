@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+// Styles
 import { HeaderStyled } from './header.styles';
 
 interface HeaderProps {
