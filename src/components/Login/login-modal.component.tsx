@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Modal from 'react-modal';
 
 // Styles
-import { LoginStyled } from './login-modal.styles';
+import { Container } from './login-modal.styles';
 
 //Components
 import { Input } from "../Input/input";
@@ -29,42 +29,58 @@ function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
 	})
 
 	return (
-		<LoginStyled>
-			<Modal
-				isOpen={isOpen}
-				onRequestClose={onRequestClose}
-			>
+		<Modal
+			className={"react-modal-content"}
+			overlayClassName={"ReactModalPortal"}
+			isOpen={isOpen}
+			onRequestClose={onRequestClose}
+			style={{
+				overlay: {
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					position: 'absolute',
+					width: '100%',
+					height: '100%',
+					top: 0,
+					bottom: 0,
+					right: 0,
+					left: 0,
+					backgroundColor: 'rgba(220, 220, 220, 30%)'
+				},
+				content: {
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					position: 'relative',
+					width: '100%',
+					maxWidth: '850px',
+				}
+			}}
+		>
+			<Container>
+				<img src={logo} alt="" />
 
-				<div className="container">
-					<div className="header login">
-						<img src={logo} alt="" />
-					</div>
-
-					<div className="form">
-						<div className="section1">
-							<label> Email:</label>
-							<Input className="email" type="email" appearance="#fff" />
-						</div>
-
-						<div className="section2">
-							<label> Senha:</label>
-							<Input type="password" appearance="#fff" />
-						</div>
-
-						<p>Esqueci minha senha</p>
-					</div>
-
-					<div className="footer login">
-
-						<div className="first">
-							<ButtonLogin appeareance="#fff" background-color="#fff">
-								<span>Entrar</span>
-							</ButtonLogin>
-						</div>
-					</div>
+				<div className="input-email">
+					<label> Email:</label>
+					<Input className="email" type="email" appearance="#fff" />
 				</div>
-			</Modal>
-		</LoginStyled>
+
+				<div className="input-password">
+					<label> Senha:</label>
+					<Input type="password" appearance="#fff" />
+				</div>
+
+				<p>Esqueci minha senha</p>
+
+
+				<div className="button-access">
+					<ButtonLogin appeareance="#fff" background-color="#fff">
+						<span>Entrar</span>
+					</ButtonLogin>
+				</div>
+			</Container>
+		</Modal >
 	);
 }
 
