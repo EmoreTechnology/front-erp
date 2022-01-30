@@ -1,31 +1,23 @@
 import React, { useState } from 'react';
-import Login from '../ModalPages/Login/login';
 import { HeaderStyled } from './header.styles';
 
-function Header() {
+interface HeaderProps {
+	onOpenLoginModal: () => void;
+}
 
-const [isModalVisible, setIsModalVisible] = useState(false);
+function Header({ onOpenLoginModal }: HeaderProps) {
+	return (
+		<HeaderStyled>
+			<div className="container">
 
-  return (
-    <HeaderStyled>
-      <div className="container">
-
-        <div className="header">
-          <button className="button1" onClick={() => setIsModalVisible(true)}>
-            <span>Login</span>
-          </button>
-
-          {isModalVisible ? 
-            <Login>
-              <button onClick={() => setIsModalVisible(false)}>Close</button>
-            </Login>
-          : null}
-
-        </div >
-
-      </div>
-    </HeaderStyled>
-  );
+				<div className="header">
+					<button className="button1" onClick={onOpenLoginModal}>
+						<span>Login</span>
+					</button>
+				</div >
+			</div>
+		</HeaderStyled>
+	);
 }
 
 export default Header;

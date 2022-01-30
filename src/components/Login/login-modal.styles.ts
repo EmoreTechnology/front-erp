@@ -5,11 +5,6 @@ export const LoginStyled = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    position: absolute;
-    right: 0;
-    left: 0;
-    background: rgb(198 201 221 / 30%);
-    z-index: 10;
     
     .container {
       display: flex;
@@ -19,29 +14,20 @@ export const LoginStyled = styled.div`
       border: 1px solid white;
       background-color: black;
       color: white;
-      width: 80%;
-      padding: 15px;
+      width: 100%;
 
-        .close {
-          display: flex;
-          padding: 15px;
-          justify-content: end;
-        }
-
-        .header.login {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          margin: 0;
-          
-          img {
-            width: 100%;
-            max-width: 787px;
-            max-height: 376px;
-          }
-        }
-
+			.header.login {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				margin: 0;
+				
+				img {
+					width: 100%;
+					max-width: 450px;
+				}
+			}
 
         .form {
           display: flex;
@@ -169,6 +155,4 @@ export const LoginStyled = styled.div`
         }
         
       }
-      
-
 `;

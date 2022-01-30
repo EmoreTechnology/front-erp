@@ -1,5 +1,11 @@
-import React from "react";
+// Dependencies
+import { useState } from "react";
+
+// Styles
 import { AppStyled } from './home.styles';
+
+//Components
+import LoginModal from '../../components/Login/login-modal.component';
 
 //Assets
 import logo from "../../Assets/logo.png";
@@ -9,26 +15,35 @@ import Footer from "../../components/footer/footer";
 import Slide from "../../components/slide/slide";
 import Header from "../../components/header/header";
 
-
 function Home() {
-  return (
-    <AppStyled>
-      <div className="container">
+	const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
-        <Header />
+	function handleOpenLoginModal() {
+		setIsLoginModalOpen(true);
+	}
 
-        <div className="section1">
-          <img src={logo} alt="" />
-        </div>
+	function handleCloseLoginModal() {
+		setIsLoginModalOpen(false);
+	}
 
-        <Slide />
+	return (
+		<AppStyled>
+			<div className="container">
 
-        <Footer />
+				<Header onOpenLoginModal={handleOpenLoginModal} />
 
-      </div>
+				<LoginModal isOpen={isLoginModalOpen} onRequestClose={handleCloseLoginModal} />
 
-    </AppStyled>
-  );
+				<div className="section1">
+					<img src={logo} alt="" />
+				</div>
+
+				<Slide />
+
+				<Footer />
+			</div>
+		</AppStyled>
+	);
 }
 
 export default Home;

@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import Home from './pages/Home/home';
 import {mount, route} from 'navi';
 import {Router} from 'react-navi';
+import { createServer } from 'miragejs';
 
-import AppRoutes from './AppRoutes';
 import Logged from './pages/homeLogged/logged';
 import Login from './components/ModalPages/Login/login';
 import Register from './components/ModalPages/Register/register';
@@ -28,6 +28,22 @@ const routes = mount({
   })
 })
 
-ReactDOM.render(<Router routes={routes}/>,
-  document.getElementById('root')
+createServer({
+	routes() {
+		this.namespace = 'api';
+		this.get('login', () => {
+			return [
+				{
+					id: 1,
+					email: 'admin',
+					password: '123',
+				}
+			]
+		})
+	}
+})
+
+ReactDOM.render(
+	<Router routes={routes} />,
+	document.getElementById('root')
 );
