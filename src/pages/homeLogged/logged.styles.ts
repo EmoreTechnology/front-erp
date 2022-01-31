@@ -91,21 +91,14 @@ export const LoggedStyled = styled.div`
   
   .opneSidebar {
     transition: 0.7s;
-    width: 180px;
+    margin-top: 83px;
+    width: 100%;
     height: 100%;
-    
-    @media (max-width: 360px) {
-      width: 40px;
+    background-color: transparent;
+
+    @media (max-width:768px) {
+      margin-top: 50px;
     }
-  }
-
-  .to-right {
-    margin-left: 220px;
-    transition: all 300ms ease-in-out;
-
-    @media (max-width:360px) {
-      margin-left: 80px;
-    } 
   }
 }
 `;

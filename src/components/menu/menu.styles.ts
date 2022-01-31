@@ -5,13 +5,11 @@ export const MenuStyled = styled.div`
 nav {
   background: #333;
   color: #fff;
-  width: 0;
   position: fixed;
   top: 0;
   left: 0;
   opacity: 1;
   overflow-x: hidden;
-  padding: 20px
     /* transition: 0.7s all ease-in-out; */
   }
 
@@ -28,11 +26,24 @@ nav {
     display: flex;
   }
 
+  .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    background-color: #202020;
+    width: 180px;
+    height: 100%;
+    padding: 20px;
+
+    @media (max-width:360px) {
+      width: 40px;
+    }
+  }
+
   .content{
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-right: 20px;
 
     @media (max-width:360px) {
       margin-right: 0px;

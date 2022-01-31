@@ -5,12 +5,6 @@ import { LoggedStyled } from './logged.styles';
 import logo from "../../Assets/logo.png";
 import iconHome from "../../Assets/icon-home.png";
 import iconLogof from "../../Assets/icon-logof.png";
-import iconUser from "../../Assets/icon-user.png";
-import iconSupport from "../../Assets/icon-support.png";
-import iconRequest from "../../Assets/icon-requests.png";
-import iconProduct from "../../Assets/icon-products.png";
-import iconFinancial from "../../Assets/icon-financial.png";
-import iconBuy from "../../Assets/icon-buy.png";
 
 //Components
 import SideBar from "../../components/menu/menu";
