@@ -8,6 +8,7 @@ import './index.css';
 createServer({
 	routes() {
 		this.namespace = 'api';
+		
 		this.get('login', () => {
 			return [
 				{
@@ -16,6 +17,12 @@ createServer({
 					password: '123',
 				}
 			]
+		})
+
+		this.post('login', (schema, request) => {
+			const data = JSON.parse(request.requestBody)
+
+			return data;
 		})
 	}
 })
