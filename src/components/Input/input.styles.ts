@@ -10,5 +10,5 @@ export const InputStyles = styled.input`
   border-radius: 8px;
   background: white;
   background: ${(props: InputProps) => props.appearance};  
-  `;
+`;
 

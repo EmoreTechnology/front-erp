@@ -1,12 +1,11 @@
 // Dependencies
-import { useEffect } from 'react';
+import { SyntheticEvent, useCallback, useRef, useState } from 'react';
 import Modal from 'react-modal';
 
 // Styles
 import { Container } from './login-modal.styles';
 
 //Components
-import { Input } from "../Input/input";
 import { ButtonLogin } from "../Button/buton";
 
 // Assets
@@ -20,6 +19,11 @@ Modal.setAppElement("#root");
 interface ILoginProps {
 	isOpen: boolean;
 	onRequestClose: () => void;
+}
+
+interface IFormData {
+	user: string;
+	pass: string;
 }
 
 function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
@@ -58,23 +62,33 @@ function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
 				}
 			}}
 		>
-			<Container>
+			<Container onSubmit={handleLoggedUser}>
 				<img src={logo} alt="" />
         
 				<div className="input-email">
 					<label> Email:</label>
-					<Input className="email" type="email" appearance="#fff" />
+
+					<input
+						type="email"
+						value={user}
+						onChange={event => setUser(event.target.value)}
+					/>
 				</div>
 
 				<div className="input-password">
 					<label> Senha:</label>
-					<Input type="password" appearance="#fff" />
+
+					<input
+						type="password"
+						value={pass}
+						onChange={event => setPass(event.target.value)}
+					/>
 				</div>
 
 				<p>Esqueci minha senha</p>
 
 				<div className="button-access">
-					<ButtonLogin appeareance="#fff" background-color="#fff">
+					<ButtonLogin appeareance="#fff" background-color="#fff" type="submit" >
 						<span>Entrar</span>
 					</ButtonLogin>
 				</div>
