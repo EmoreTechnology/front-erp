@@ -11,10 +11,13 @@ export const UserStyled = styled.div`
     left: 0;
     top: 0;
     z-index: 10;
-    margin: 65px 0px 0px 225px;
-    
+    margin: 85px 0px 0px 225px;
+
+    @media (max-width:768px) {
+      margin: 55px 0px 0px 225px;
+    }
     @media (max-width:360px) {
-      margin: 65px 0px 0px 85px;
+      margin: 55px 0px 0px 85px;
     }
 
     .container {

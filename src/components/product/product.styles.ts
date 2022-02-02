@@ -11,10 +11,13 @@ export const ProductStyled = styled.div`
     left: 0;
     top: 0;
     z-index: 10;
-    margin: 115px 0px 0px 225px;
+    margin: 135px 0px 0px 225px;
     
+     @media (max-width:768px) {
+      margin: 105px 0px 0px 225px;
+    }
     @media (max-width:360px) {
-      margin: 115px 0px 0px 85px;
+      margin: 105px 0px 0px 85px;
     }
 
     .container {

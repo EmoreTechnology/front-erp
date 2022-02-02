@@ -46,22 +46,20 @@ export const LoggedStyled = styled.div`
       margin-left: 100px;
 
       @media (max-width:768px) {
-        margin-left: 60px;
+        margin-left: 75px;
       }
     }
     
     svg {
       color: #fff;
+      width: 47px;
+      height: 42px;
+      margin-right: 15px;
       
-      @media (min-width:768px) {
-        margin-right: 20px;
-        width: 37px;
-        height: 32px;
-      }
-      @media (min-width:1440px) {
-        margin-right: 30px;
-        width: 47px;
-        height: 42px;
+      @media (max-width:768px) {
+        margin-right: 7px;
+        width: 27px;
+        height: 22px;
       }
     }
   }

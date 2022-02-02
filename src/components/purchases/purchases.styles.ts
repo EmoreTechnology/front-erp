@@ -11,10 +11,13 @@ export const PurchasesStyled = styled.div`
     left: 0;
     top: 0;
     z-index: 10;
-    margin: 165px 0px 0px 225px;
-    
+    margin: 185px 0px 0px 225px;
+
+    @media (max-width:768px) {
+      margin: 155px 0px 0px 225px;
+    }
     @media (max-width:360px) {
-      margin: 165px 0px 0px 85px;
+      margin: 155px 0px 0px 85px;
     }
 
     .container {

@@ -11,10 +11,13 @@ export const SupportStyled = styled.div`
     left: 0;
     top: 0;
     z-index: 10;
-    margin: 315px 0px 0px 225px;
+    margin: 335px 0px 0px 225px;
     
+    @media (max-width:768px) {
+      margin: 305px 0px 0px 225px;
+    }
     @media (max-width:360px) {
-      margin: 315px 0px 0px 85px;
+      margin: 305px 0px 0px 85px;
     }
 
     .container {
