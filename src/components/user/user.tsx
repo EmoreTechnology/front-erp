@@ -1,7 +1,13 @@
 import React from "react";
-import { UserStyled } from "./user.styles";
 
-//Assets
+// Styles
+import { UserStyled } from "./user.styles";
+interface IUserProps {
+  createProducts?: string,
+  createStock?: string,
+  createCategories?: string,
+}
+
 
 const ModalUser = () => {
   return(

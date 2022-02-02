@@ -1,15 +1,21 @@
 import React from "react";
+
+// Style
 import { ProductStyled } from "./product.styles";
 
-//Assets
+interface IProductsProps {
+  createProducts?: string,
+  createStock?: string,
+  createCategories?: string,
+}
 
-const ModalProducts = () => {
+const ModalProducts = ({createProducts, createStock, createCategories}: IProductsProps) => {
   return (
     <ProductStyled>
       <div className="container">
         <div className="register products">
           <button>
-            <p>Cadastrar produto</p>
+            <p>{createProducts}</p>
           </button>
         </div>
 
@@ -17,7 +23,7 @@ const ModalProducts = () => {
 
         <div className="stock">
           <button>
-            <p>Estoque</p>
+            <p>{createStock}</p>
           </button>
         </div>
 
@@ -25,7 +31,7 @@ const ModalProducts = () => {
 
         <div className="categories">
           <button>
-            <p>Categorias</p>
+            <p>{createCategories}</p>
           </button>
         </div>
 

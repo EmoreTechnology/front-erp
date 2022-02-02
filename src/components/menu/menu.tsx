@@ -63,7 +63,11 @@ const SideBar = ({ openClass, children }: any) => {
               <img className="select" src={iconSelect} alt=""/>
             </li>
             {isProductVisible ?
-              <ModalProducts/>
+              <ModalProducts 
+                createProducts="Cadastro de produtos"
+                createStock="Estoque"
+                createCategories="Categorias"
+              />
               : null}
 
             <span />
