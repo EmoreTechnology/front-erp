@@ -37,31 +37,28 @@ export const LoggedStyled = styled.div`
       background-color: black;
       border: none;
     }
-    
+
+    .menu-open {
+      margin-left: 10px;
+    }
+
     .home {
-      margin-left: 12px;
-      
-      @media (min-width: 768px) {
-        margin-left: 20px;
-        width: 46px;
-        height: 50px;
-      }
-      @media (min-width: 1440px) {
-        margin-left: 30px;
-        width: 56px;
-        height: 60px;
+      margin-left: 100px;
+
+      @media (max-width:768px) {
+        margin-left: 60px;
       }
     }
     
-    .logof {
-      margin-right: 12px;
+    svg {
+      color: #fff;
       
-      @media (min-width: 768px) {
+      @media (min-width:768px) {
         margin-right: 20px;
         width: 37px;
         height: 32px;
       }
-      @media (min-width: 1440px) {
+      @media (min-width:1440px) {
         margin-right: 30px;
         width: 47px;
         height: 42px;
@@ -91,14 +88,21 @@ export const LoggedStyled = styled.div`
   
   .opneSidebar {
     transition: 0.7s;
-    margin-top: 83px;
     width: 100%;
     height: 100%;
     background-color: transparent;
-
-    @media (max-width:768px) {
-      margin-top: 50px;
-    }
   }
+
+  .to-right {
+    display: flex;
+    margin: 20px 0 20px 200px;  
+
+    @media (max-width:360px) {    
+      margin-left: 50px !important;
+    }
+
+    @media (max-width:768px) {    
+    margin: 13px 0 20px 200px;
+    }
 }
 `;

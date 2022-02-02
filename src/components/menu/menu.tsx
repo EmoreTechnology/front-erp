@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { MenuStyled } from './menu.styles';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //Assets
-import iconUser from "../../Assets/icon-user.png";
-import iconSupport from "../../Assets/icon-support.png";
-import iconRequest from "../../Assets/icon-requests.png";
-import iconProduct from "../../Assets/icon-products.png";
-import iconLogof from "../../Assets/icon-logof.png";
-import iconFinancial from "../../Assets/icon-financial.png";
-import iconBuy from "../../Assets/icon-buy.png";
 import iconSelect from "../../Assets/icon-select.png";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCoins } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faHandsHelping } from "@fortawesome/free-solid-svg-icons";
+import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
+import { faListAlt } from "@fortawesome/free-solid-svg-icons";
+import { faClipboardList } from "@fortawesome/free-solid-svg-icons";
 
 //Pages
 import ModalUser from "../user/user";
@@ -20,7 +21,7 @@ import ModalFinancial from "../financial/financial";
 import ModalSupport from "../support/support";
 
 
-const SideBar = ({ openClass }: any) => {
+const SideBar = ({ openClass, children }: any) => {
   const [isUserVisible, setIsUserVisible] = useState(false);
   const [isProductVisible, setIsProductsVisible] = useState(false);
   const [isPurchasesVisible, setIsPurchasesVisible] = useState(false);
@@ -39,10 +40,11 @@ const SideBar = ({ openClass }: any) => {
     <MenuStyled>
       <nav className={openClass === 'open' ? 'opneSidebar' : ''}>
         <div className="container">
+          {children}
           <div className="content">
             <li onClick={toggling1}>
               <div className="sections">
-                <img src={iconUser} alt=""/>
+                <FontAwesomeIcon icon={faUserCircle} />
                 <p>Usuário</p>
               </div>
               <img className="select" src={iconSelect} alt=""/>
@@ -55,7 +57,7 @@ const SideBar = ({ openClass }: any) => {
 
             <li onClick={toggling2}>
               <div className="sections">
-                <img src={iconProduct} alt=""/>
+                <FontAwesomeIcon icon={faListAlt} />
                 <p>Produtos</p>
               </div>
               <img className="select" src={iconSelect} alt=""/>
@@ -68,7 +70,7 @@ const SideBar = ({ openClass }: any) => {
 
             <li onClick={toggling3}>
               <div className="sections">
-                <img src={iconBuy} alt=""/>
+                <FontAwesomeIcon icon={faShoppingCart} />
                 <p>Compras</p>
               </div>
               <img className="select" src={iconSelect} alt=""/>
@@ -81,7 +83,7 @@ const SideBar = ({ openClass }: any) => {
 
             <li onClick={toggling4}>
               <div className="sections">
-                <img src={iconRequest} alt=""/>
+                <FontAwesomeIcon icon={faClipboardList} />
                 <p>Pedidos</p>
               </div>
               <img className="select" src={iconSelect} alt=""/>
@@ -94,7 +96,7 @@ const SideBar = ({ openClass }: any) => {
 
             <li onClick={toggling5}>
               <div className="sections">
-                <img src={iconFinancial} alt=""/>
+                <FontAwesomeIcon icon={faCoins} />
                 <p>Financeiro</p>
               </div>
               <img className="select" src={iconSelect} alt=""/>
@@ -107,7 +109,7 @@ const SideBar = ({ openClass }: any) => {
 
             <li onClick={toggling6}>
               <div className="sections">
-                <img src={iconSupport} alt="" />
+                <FontAwesomeIcon icon={faHandsHelping} />
                 <p>Suporte</p>
               </div>
               <img className="select" src={iconSelect} alt=""/>
@@ -121,7 +123,7 @@ const SideBar = ({ openClass }: any) => {
 
           <button className="close">
             <div className="sections">
-              <img src={iconLogof} alt=""/>
+              <FontAwesomeIcon icon={faPowerOff} />
               <p>Sair</p>
             </div>
           </button>

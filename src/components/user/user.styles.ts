@@ -11,10 +11,10 @@ export const UserStyled = styled.div`
     left: 0;
     top: 0;
     z-index: 10;
-    margin: 20px 0px 0px 225px;
+    margin: 65px 0px 0px 225px;
     
     @media (max-width:360px) {
-      margin: 20px 0px 0px 85px;
+      margin: 65px 0px 0px 85px;
     }
 
     .container {
@@ -66,7 +66,11 @@ export const UserStyled = styled.div`
       cursor: pointer;
 
       :hover {
-        background-color: #C4C4C4;
+        background-color: #818181;
+        
+        p {
+          color: #fff;
+        }
       }
     }
 

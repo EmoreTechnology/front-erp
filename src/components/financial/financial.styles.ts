@@ -11,10 +11,10 @@ export const FinancialStyled = styled.div`
     left: 0;
     top: 0;
     z-index: 10;
-    margin: 220px 0px 0px 225px;
+    margin: 265px 0px 0px 225px;
     
     @media (max-width:360px) {
-      margin: 220px 0px 0px 85px;
+      margin: 265px 0px 0px 85px;
     }
 
     .container {
@@ -65,7 +65,11 @@ export const FinancialStyled = styled.div`
       cursor: pointer;
 
       :hover {
-        background-color: #C4C4C4;
+        background-color: #818181;
+        
+        p {
+          color: #fff;
+        }
       }
     }
 
