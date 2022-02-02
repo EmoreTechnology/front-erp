@@ -37,34 +37,29 @@ export const LoggedStyled = styled.div`
       background-color: black;
       border: none;
     }
-    
+
+    .menu-open {
+      margin-left: 10px;
+    }
+
     .home {
-      margin-left: 12px;
-      
-      @media (min-width: 768px) {
-        margin-left: 20px;
-        width: 46px;
-        height: 50px;
-      }
-      @media (min-width: 1440px) {
-        margin-left: 30px;
-        width: 56px;
-        height: 60px;
+      margin-left: 100px;
+
+      @media (max-width:768px) {
+        margin-left: 75px;
       }
     }
     
-    .logof {
-      margin-right: 12px;
+    svg {
+      color: #fff;
+      width: 47px;
+      height: 42px;
+      margin-right: 15px;
       
-      @media (min-width: 768px) {
-        margin-right: 20px;
-        width: 37px;
-        height: 32px;
-      }
-      @media (min-width: 1440px) {
-        margin-right: 30px;
-        width: 47px;
-        height: 42px;
+      @media (max-width:768px) {
+        margin-right: 7px;
+        width: 27px;
+        height: 22px;
       }
     }
   }
@@ -91,21 +86,21 @@ export const LoggedStyled = styled.div`
   
   .opneSidebar {
     transition: 0.7s;
-    width: 180px;
+    width: 100%;
     height: 100%;
-    
-    @media (max-width: 360px) {
-      width: 40px;
-    }
+    background-color: transparent;
   }
 
   .to-right {
-    margin-left: 220px;
-    transition: all 300ms ease-in-out;
+    display: flex;
+    margin: 20px 0 20px 200px;  
 
-    @media (max-width:360px) {
-      margin-left: 80px;
-    } 
-  }
+    @media (max-width:360px) {    
+      margin-left: 50px !important;
+    }
+
+    @media (max-width:768px) {    
+    margin: 13px 0 20px 200px;
+    }
 }
 `;

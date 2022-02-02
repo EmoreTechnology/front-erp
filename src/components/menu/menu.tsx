@@ -1,93 +1,133 @@
-import React from "react";
+import React, { useState } from "react";
 import { MenuStyled } from './menu.styles';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //Assets
-import iconUser from "../../Assets/icon-user.png";
-import iconSupport from "../../Assets/icon-support.png";
-import iconRequest from "../../Assets/icon-requests.png";
-import iconProduct from "../../Assets/icon-products.png";
-import iconLogof from "../../Assets/icon-logof.png";
-import iconFinancial from "../../Assets/icon-financial.png";
-import iconBuy from "../../Assets/icon-buy.png";
 import iconSelect from "../../Assets/icon-select.png";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCoins } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faHandsHelping } from "@fortawesome/free-solid-svg-icons";
+import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
+import { faListAlt } from "@fortawesome/free-solid-svg-icons";
+import { faClipboardList } from "@fortawesome/free-solid-svg-icons";
+
+//Pages
+import ModalUser from "../user/user";
+import ModalProducts from "../product/product";
+import ModalPurchases from "../purchases/purchases";
+import ModalRequests from "../requests/requests";
+import ModalFinancial from "../financial/financial";
+import ModalSupport from "../support/support";
 
 
-const SideBar = ({ openClass }: any) => {
+const SideBar = ({ openClass, children }: any) => {
+  const [isUserVisible, setIsUserVisible] = useState(false);
+  const [isProductVisible, setIsProductsVisible] = useState(false);
+  const [isPurchasesVisible, setIsPurchasesVisible] = useState(false);
+  const [isRequestsVisible, setIsRequestsVisible] = useState(false);
+  const [isFinancialVisible, setIsFinancialVisible] = useState(false);
+  const [isSupportVisible, setIsSupportVisible] = useState(false);
 
-  const [on, setOn] = React.useState(false);
-
-  const handleOn = () => {
-    setOn(!on);
-  };
+  const toggling1 = () => setIsUserVisible(!isUserVisible);
+  const toggling2 = () => setIsProductsVisible(!isProductVisible);
+  const toggling3 = () => setIsPurchasesVisible(!isPurchasesVisible);
+  const toggling4 = () => setIsRequestsVisible(!isRequestsVisible);
+  const toggling5 = () => setIsFinancialVisible(!isFinancialVisible);
+  const toggling6 = () => setIsSupportVisible(!isSupportVisible);
 
   return (
     <MenuStyled>
       <nav className={openClass === 'open' ? 'opneSidebar' : ''}>
         <div className="container">
+          {children}
           <div className="content">
-            <li>
+            <li onClick={toggling1}>
               <div className="sections">
-                <img src={iconUser} alt=""/>
+                <FontAwesomeIcon icon={faUserCircle} />
                 <p>Usuário</p>
               </div>
               <img className="select" src={iconSelect} alt=""/>
             </li>
+            {isUserVisible ?
+              <ModalUser/>
+              : null}
 
-            <span/>
+            <span />
 
-            <li>
+            <li onClick={toggling2}>
               <div className="sections">
-                <img src={iconProduct} alt=""/>
+                <FontAwesomeIcon icon={faListAlt} />
                 <p>Produtos</p>
               </div>
               <img className="select" src={iconSelect} alt=""/>
             </li>
+            {isProductVisible ?
+              <ModalProducts 
+                createProducts="Cadastro de produtos"
+                createStock="Estoque"
+                createCategories="Categorias"
+              />
+              : null}
 
-            <span/>
+            <span />
 
-            <li>
+            <li onClick={toggling3}>
               <div className="sections">
-                <img src={iconBuy} alt=""/>
+                <FontAwesomeIcon icon={faShoppingCart} />
                 <p>Compras</p>
               </div>
               <img className="select" src={iconSelect} alt=""/>
             </li>
+            {isPurchasesVisible ?
+              <ModalPurchases/>
+              : null}
 
-            <span/>
+            <span />
 
-            <li>
+            <li onClick={toggling4}>
               <div className="sections">
-                <img src={iconRequest} alt=""/>
+                <FontAwesomeIcon icon={faClipboardList} />
                 <p>Pedidos</p>
               </div>
               <img className="select" src={iconSelect} alt=""/>
             </li>
+            {isRequestsVisible ?
+              <ModalRequests/>
+              : null}
 
-            <span/>
+            <span />
 
-            <li>
+            <li onClick={toggling5}>
               <div className="sections">
-                <img src={iconFinancial} alt=""/>
+                <FontAwesomeIcon icon={faCoins} />
                 <p>Financeiro</p>
               </div>
               <img className="select" src={iconSelect} alt=""/>
             </li>
+            {isFinancialVisible ?
+              <ModalFinancial/>
+              : null}
 
             <span />
 
-            <li>
+            <li onClick={toggling6}>
               <div className="sections">
-                <img src={iconSupport} alt=""/>
+                <FontAwesomeIcon icon={faHandsHelping} />
                 <p>Suporte</p>
               </div>
               <img className="select" src={iconSelect} alt=""/>
             </li>
-            <span/>
+            {isSupportVisible ?
+              <ModalSupport/>
+              : null}
+
+            <span />
           </div>
 
           <button className="close">
             <div className="sections">
-              <img src={iconLogof} alt=""/>
+              <FontAwesomeIcon icon={faPowerOff} />
               <p>Sair</p>
             </div>
           </button>
