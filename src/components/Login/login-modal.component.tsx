@@ -8,7 +8,6 @@ import { Container } from './login-modal.styles';
 //Components
 import { Input } from "../Input/input";
 import { ButtonLogin } from "../Button/buton";
-import Teste from "../../teste"; 
 
 // Assets
 import logo from "../../Assets/logo.png";
@@ -50,7 +49,7 @@ function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
 					backgroundColor: 'rgba(220, 220, 220, 30%)'
 				},
 				content: {
-					display: 'flex',
+          display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
 					position: 'relative',
@@ -61,8 +60,6 @@ function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
 		>
 			<Container>
 				<img src={logo} alt="" />
-
-        <Teste title="Edilson" />
         
 				<div className="input-email">
 					<label> Email:</label>

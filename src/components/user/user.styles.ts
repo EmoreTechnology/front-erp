@@ -57,10 +57,7 @@ export const UserStyled = styled.div`
       }
     }
 
-    .users,
-    .personal.infos,
-    .change.password,
-    .remove.user {
+    .section {
       display: flex;
       align-items: center:
       justify-content: center;

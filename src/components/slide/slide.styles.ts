@@ -12,7 +12,7 @@ export const SlideStyled = styled.div`
       align-items: center;
       justify-content: center;
       width: 100%;
-      height: 650px;
+      height: 350px;
 
     p {
       font-size: 48px;

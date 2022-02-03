@@ -1,31 +1,38 @@
+// Dependencies
 import React from "react";
-import { RequestsStyled } from "./requests.styles";
 
 //Assets
+import { RequestsStyled } from "./requests.styles";
 
-const ModalRequests = () => {
+interface IRequestsProps {
+  createCommand?: string,
+  openOrder?: string,
+  closeOrder?: string,
+}
+
+const ModalRequests = ({ createCommand, openOrder, closeOrder}: IRequestsProps) => {
   return (
     <RequestsStyled>
       <div className="container">
-        <div className="register products">
+        <div className="section">
           <button>
-            <p>Criar comanda</p>
+            <p>{createCommand}</p>
           </button>
         </div>
 
         <span/>
 
-        <div className="stock">
+        <div className="section">
           <button>
-            <p>Efetuar pedido</p>
+            <p>{openOrder}</p>
           </button>
         </div>
 
         <span/>
 
-        <div className="categories">
+        <div className="section">
           <button>
-            <p>Fechar Pedido</p>
+            <p>{closeOrder}</p>
           </button>
         </div>
 

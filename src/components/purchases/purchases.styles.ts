@@ -57,10 +57,7 @@ export const PurchasesStyled = styled.div`
       }
     }
 
-    .users,
-    .personal.infos,
-    .change.password,
-    .remove.user {
+    .section {
       display: flex;
       align-items: center:
       justify-content: center;
@@ -76,7 +73,6 @@ export const PurchasesStyled = styled.div`
         }
       }
     }
-
     .leave {
       display: flex;
       flex-direction: row;
