@@ -10,9 +10,15 @@ export const Container = styled.form`
 	color: white;
 	background-color: black;
 	padding: 40px;
-	> img.logo {
-		width: 100%;
-		max-width: 450px;
+  
+  .react-modal-content {
+    display: flex;
+    align-items: start !important;
+  }
+
+	> img {
+    width: 100% !important;
+		max-width: 650px;
 	}
 		
 	> .input-email {
@@ -21,7 +27,7 @@ export const Container = styled.form`
 		flex-direction: column;
 		width: 100%;
 		max-width: 750px;
-		margin-bottom: 40px;
+		margin: 0 15px 40px 0;
 	}
 			
 	> .input-password {
@@ -30,7 +36,7 @@ export const Container = styled.form`
 		flex-direction: column;
 		width: 100%;
 		max-width: 750px;
-		margin-bottom: 40px;
+		margin: 0 15px 40px 0;
 	}
 			
 	label {

@@ -1,31 +1,38 @@
+// Dependencies
 import React from "react";
+
+// Styles
 import { FinancialStyled } from "./financial.styles";
 
-//Assets
+interface IFinancialProps {
+  createPayBills?: string,
+  createBox?: string,
+  createReports?: string,
+}
 
-const ModalFinancial = () => {
+const ModalFinancial = ({createPayBills, createBox, createReports}: IFinancialProps)  => {
   return (
     <FinancialStyled>
       <div className="container">
-        <div className="register products">
+        <div className="section">
           <button>
-            <p>Contas a pagar</p>
+            <p>{createPayBills}</p>
           </button>
         </div>
 
         <span />
 
-        <div className="stock">
+        <div className="section">
           <button>
-            <p>Caixa</p>
+            <p>{createBox}</p>
           </button>
         </div>
 
         <span />
 
-        <div className="categories">
+        <div className="section">
           <button>
-            <p>Relatórios</p>
+            <p>{createReports}</p>
           </button>
         </div>
 

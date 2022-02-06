@@ -1,5 +1,10 @@
+// Dependencies
 import React from "react";
+
+// Styles
 import { FooterStyled } from './footer.styles';
+
+// Assets
 import wpp from "../../Assets/whatsapp.png";
 import linkedin from "../../Assets/linkedin.png";
 

@@ -1,23 +1,29 @@
+// Dependencies
 import React from "react";
+
+// Styles
 import { SupportStyled } from "./support.styles";
 
-//Assets
+interface ISupportProps {
+  createWpp?: string,
+  createEmail?: string,
+}
 
-const ModalSupport = () => {
+const ModalSupport = ({ createWpp, createEmail}: ISupportProps) => {
   return (
     <SupportStyled>
       <div className="container">
-        <div className="register products">
+        <div className="section">
           <button>
-            <p>WhatsApp</p>
+            <p>{createWpp}</p>
           </button>
         </div>
 
         <span/>
 
-        <div className="stock">
+        <div className="section">
           <button>
-            <p>E-mail</p>
+            <p>{createEmail}</p>
           </button>
         </div>
 

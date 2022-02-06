@@ -57,9 +57,7 @@ export const SupportStyled = styled.div`
       }
     }
 
-    .register.products,
-    .stock,
-    .categories {
+    .section {
       display: flex;
       align-items: center:
       justify-content: center;

@@ -1,31 +1,38 @@
+// Dependencies
 import React from "react";
+
+// Style
 import { PurchasesStyled } from "./purchases.styles";
 
-//Assets
+interface IPurchasesProps {
+  createProviders?: string,
+  productEntry?: string,
+  dynamicReport?: string,
+}
 
-const ModalPurchases = () => {
+const ModalPurchases = ({ createProviders, productEntry, dynamicReport }: IPurchasesProps) => {
   return (
     <PurchasesStyled>
       <div className="container">
-        <div className="users">
+        <div className="section">
           <button>
-            <p>Cadastro de fornecedores</p>
+            <p>{createProviders}</p>
           </button>
         </div>
 
         <span/>
 
-        <div className="personal infos">
+        <div className="section">
           <button>
-            <p>Entrada de produtos</p>
+            <p>{productEntry}</p>
           </button>
         </div>
 
         <span/>
 
-        <div className="change password">
+        <div className="section">
           <button>
-            <p>Relatórios dinâmicos</p>
+            <p>{dynamicReport}</p>
           </button>
         </div>
 

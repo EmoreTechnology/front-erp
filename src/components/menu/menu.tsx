@@ -1,6 +1,9 @@
+//Depedences
 import React, { useState } from "react";
-import { MenuStyled } from './menu.styles';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+//Styles
+import { MenuStyled } from './menu.styles';
 
 //Assets
 import iconSelect from "../../Assets/icon-select.png";
@@ -50,7 +53,12 @@ const SideBar = ({ openClass, children }: any) => {
               <img className="select" src={iconSelect} alt=""/>
             </li>
             {isUserVisible ?
-              <ModalUser/>
+              <ModalUser
+                createUsers="Editar cadastro"
+                createInfos="Iformações pessoais"
+                createPassword="Alterar senha"
+                createRemoveUsers="Remover usuário"
+              />
               : null}
 
             <span />
@@ -80,7 +88,11 @@ const SideBar = ({ openClass, children }: any) => {
               <img className="select" src={iconSelect} alt=""/>
             </li>
             {isPurchasesVisible ?
-              <ModalPurchases/>
+              <ModalPurchases
+                createProviders="Cadastro de fornecedores"
+                productEntry="Entrada de produtos"
+                dynamicReport="Relatórios dinâmicos"
+              />
               : null}
 
             <span />
@@ -93,7 +105,11 @@ const SideBar = ({ openClass, children }: any) => {
               <img className="select" src={iconSelect} alt=""/>
             </li>
             {isRequestsVisible ?
-              <ModalRequests/>
+              <ModalRequests
+                createCommand="Criar comanda"
+                openOrder="Efetuar pedido"
+                closeOrder="Fechar comanda"
+                />
               : null}
 
             <span />
@@ -106,7 +122,11 @@ const SideBar = ({ openClass, children }: any) => {
               <img className="select" src={iconSelect} alt=""/>
             </li>
             {isFinancialVisible ?
-              <ModalFinancial/>
+              <ModalFinancial
+                createPayBills="Contas a pagar"
+                createBox="Caixa"
+                createReports="Relatórios"
+              />
               : null}
 
             <span />
@@ -119,7 +139,10 @@ const SideBar = ({ openClass, children }: any) => {
               <img className="select" src={iconSelect} alt=""/>
             </li>
             {isSupportVisible ?
-              <ModalSupport/>
+              <ModalSupport
+                createWpp="WhatsApp"
+                createEmail="E-mail"
+              />
               : null}
 
             <span />

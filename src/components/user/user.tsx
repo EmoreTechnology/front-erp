@@ -1,45 +1,47 @@
+// Dependencies
 import React from "react";
 
 // Styles
 import { UserStyled } from "./user.styles";
+
 interface IUserProps {
-  createProducts?: string,
-  createStock?: string,
-  createCategories?: string,
+  createUsers?: string,
+  createInfos?: string,
+  createPassword?: string,
+  createRemoveUsers?: string,
 }
 
-
-const ModalUser = () => {
+const ModalUser = ({createUsers, createInfos, createPassword, createRemoveUsers}:IUserProps) => {
   return(
     <UserStyled>
       <div className="container">
-        <div className="users">
+        <div className="section">
           <button>
-            <p>Editar cadastro</p>
+            <p>{createUsers}</p>
           </button>
         </div>
 
         <span/>
 
-        <div className="personal infos">
+        <div className="section">
           <button>
-            <p>Informações pessoais</p>
+            <p>{createInfos}</p>
           </button>
         </div>
 
         <span/>
 
-        <div className="change password">
+        <div className="section">
           <button>
-            <p>Alterar senha</p>
+            <p>{createPassword}</p>
           </button>
         </div>
 
         <span/>
 
-        <div className="remove user">
+        <div className="section">
           <button>
-            <p>Remover usuário</p>
+            <p>{createRemoveUsers}</p>
           </button>
         </div>
 

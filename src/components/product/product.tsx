@@ -1,3 +1,4 @@
+// Dependencies
 import React from "react";
 
 // Style
@@ -13,7 +14,7 @@ const ModalProducts = ({createProducts, createStock, createCategories}: IProduct
   return (
     <ProductStyled>
       <div className="container">
-        <div className="register products">
+        <div className="section">
           <button>
             <p>{createProducts}</p>
           </button>
@@ -21,7 +22,7 @@ const ModalProducts = ({createProducts, createStock, createCategories}: IProduct
 
         <span/>
 
-        <div className="stock">
+        <div className="section">
           <button>
             <p>{createStock}</p>
           </button>
@@ -29,7 +30,7 @@ const ModalProducts = ({createProducts, createStock, createCategories}: IProduct
 
         <span/>
 
-        <div className="categories">
+        <div className="section">
           <button>
             <p>{createCategories}</p>
           </button>

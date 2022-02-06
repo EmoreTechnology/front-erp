@@ -11,7 +11,7 @@ export const HeaderStyled = styled.div`
       .header {
         display: flex;
         width: 100%;
-        margin: 30px 45px 30px 0px;
+        margin: 30px;
         justify-content: flex-end;
       }
 
@@ -21,6 +21,7 @@ export const HeaderStyled = styled.div`
         color: white;
         font-size: 16px;
         background-color: black;
+        margin-right: 25px;
 
         span {
           color: white;

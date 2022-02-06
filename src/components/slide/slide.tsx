@@ -1,5 +1,8 @@
+// Dependencies
 import React from "react";
-import { SlideStyled } from './slide.styles.ts';
+
+// Styles
+import { SlideStyled } from './slide.styles';
 
 function Slide() {
   return (
