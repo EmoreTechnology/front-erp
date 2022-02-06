@@ -15,6 +15,10 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 //Components
 import SideBar from "../../components/menu/menu";
+import Accordion from "../../components/Accordeon/accordeon.component";
+
+// Utils
+import { accordionData } from "../../utils/mocks/accordeon";
 
 function Logged() {
 
@@ -49,6 +53,10 @@ function Logged() {
         <span />
 
         <img className="logo" src={logo} alt=""/>
+
+				{accordionData.map((item) => (
+					<Accordion title={item.title} content={item.content} />
+				))}
       </div>
     </LoggedStyled>
   );

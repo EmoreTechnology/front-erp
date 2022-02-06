@@ -14,10 +14,6 @@ import logo from "../../Assets/logo.png";
 import Footer from "../../components/footer/footer";
 import Slide from "../../components/slide/slide";
 import Header from "../../components/header/header";
-import Accordion from "../../components/Accordeon/accordeon.component";
-
-// Utils
-import { accordionData } from "../../utils/mocks/accordeon";
 
 function Home() {
 	const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
@@ -43,10 +39,6 @@ function Home() {
 				</div>
 
 				<Slide />
-
-				{accordionData.map((item) => (
-					<Accordion title={item.title} content={item.content} />
-				))}
 
 				<Footer />
 			</div>
