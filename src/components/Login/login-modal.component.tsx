@@ -23,10 +23,10 @@ interface ILoginProps {
 }
 
 function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
-	useEffect(() => {
-		api.get('http://localhost:3000/api/login')
-			.then(resp => resp.data)
-	})
+	// useEffect(() => {
+	// 	api.get('http://localhost:3000/api/login')
+	// 		.then(resp => resp.data)
+	// })
 
 	return (
 		<Modal

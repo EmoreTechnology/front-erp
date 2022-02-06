@@ -59,7 +59,7 @@ export const UserStyled = styled.div`
 
     .section {
       display: flex;
-      align-items: center:
+      align-items: center;
       justify-content: center;
       width: 100%;
       height: 40px;
