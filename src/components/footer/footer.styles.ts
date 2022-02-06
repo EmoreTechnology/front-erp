@@ -15,9 +15,7 @@ export const FooterStyled = styled.div`
 		justify-content: center;
 		flex-direction: column;
 		width: 100%;
-		height: 100%;
 		border-top: solid 1px;
-		padding: 10px;
 	
 		@media (max-width: 360px) {
 			flex-direction: row;
@@ -31,13 +29,13 @@ export const FooterStyled = styled.div`
 			width: 100%;
 			text-align: center;
 			font-weight: 500;
-			margin-bottom: 40px;
+			margin: 15px 0 0 0;
 			
 			@media (max-width: 360px) {
-				text-align: center;
+        text-align: center;
 				justify-content: center;
-				margin-top: 40px;
 				font-size: 12px;
+        margin: 0;
 			}  
 		}  
 
@@ -70,27 +68,18 @@ export const FooterStyled = styled.div`
 		
 		img {
 			width: 38px;
-			height: 38px;   
+			height: 38px;
+      margin: 20px 0 20px 0;
 
 			@media (max-width: 360px) {
 				align-items: center;
 				justify-content: flex-end;
 			}
 		}
-		
-		.wpp {
-			display: flex;
-			margin-right: 60px;
-			background: white;
-			width: 100%;
-			max-width: 45px;
-			max-height: 45px;
 
-			@media (max-width: 360px) {
-				align-items: center;
-				justify-content: flex-end;
-				margin-right: 25px;
-			}
-		}
+    .wpp {
+      margin-right: 40px;
+    }
+
 	}
 `;
