@@ -1,17 +1,11 @@
+// Dependencies
 import React, { useState } from 'react';
 
+// Styles
 import { Container } from './accordeon.styles';
 
-interface AccordionContentProps {
-	name: string;
-	secondName: string;
-	price: number;
-}
-
-export interface IAccordeonProps {
-	title: string;
-	content: AccordionContentProps;
-}
+// Utils
+import { IAccordeonProps } from '../../utils/models/accordion.model';
 
 const Accordeon: React.FC<IAccordeonProps> = ({ content, title }) => {
 	const [isActive, setIsActive] = useState(false);

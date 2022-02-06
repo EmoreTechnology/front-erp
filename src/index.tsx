@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRoutes from './AppRoutes';
 import { createServer } from 'miragejs';
+import './index.css';
 
 createServer({
 	routes() {

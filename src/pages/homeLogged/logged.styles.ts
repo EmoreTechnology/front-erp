@@ -6,7 +6,7 @@ export const LoggedStyled = styled.div`
   justify-content: center;
   flex-direction: column;
 	width: 100%;
-	background-color: black;
+	height: 100%;
 	color: white;
   font-family:"Poppins";
   

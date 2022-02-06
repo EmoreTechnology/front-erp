@@ -8,14 +8,11 @@ interface HeaderProps {
 function Header({ onOpenLoginModal }: HeaderProps) {
 	return (
 		<HeaderStyled>
-			<div className="container">
-
-				<div className="header">
-					<button className="button1" onClick={onOpenLoginModal}>
-						<span>Login</span>
-					</button>
-				</div >
-			</div>
+			<div className="header">
+				<button className="button1" onClick={onOpenLoginModal}>
+					<span>Login</span>
+				</button>
+			</div >
 		</HeaderStyled>
 	);
 }
