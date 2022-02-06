@@ -15,8 +15,6 @@ function Footer() {
 
         <p>Fale Conosco</p>
 
-        <span className="line"></span>
-
         <div className="contacts">
           <img className="wpp" src={wpp} alt="" />
           <img src={linkedin} alt="" />

@@ -13,44 +13,22 @@ export const FooterStyled = styled.div`
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		flex-direction: column;
+    flex-direction: row;
 		width: 100%;
 		border-top: solid 1px;
-	
-		@media (max-width: 360px) {
-			flex-direction: row;
-			align-items: center;
-			justify-content: center;
-			height: 71px;
-			width: 100%;
-		}
+    height: 71px;
 	
 		p {
-			width: 100%;
+      justify-content: center;
 			text-align: center;
+			width: 100%;
 			font-weight: 500;
-			margin: 15px 0 0 0;
-			
-			@media (max-width: 360px) {
-        text-align: center;
-				justify-content: center;
-				font-size: 12px;
-        margin: 0;
-			}  
-		}  
+      font-size: 12px;
 
-		.line {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 44px;
-			width: 1px;
-			background-color: white;
-
-			@media (min-width: 360px){
-				display: none;
-			}
-		}
+      @media (min-width: 768px) {
+        font-size: 16px;
+      }
+ 		}  
 		
 		.contacts {
 			display: flex;
@@ -58,28 +36,20 @@ export const FooterStyled = styled.div`
 			justify-content: center;
 			flex-direction: row;
 			width: 100%;
-			
-			@media (max-width: 360px) {
-				align-items: center;
-				justify-content: center;
-				font-size: 12px;
-			}
+      font-size: 12px;
 		}
 		
 		img {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
 			width: 38px;
 			height: 38px;
       margin: 20px 0 20px 0;
-
-			@media (max-width: 360px) {
-				align-items: center;
-				justify-content: flex-end;
-			}
 		}
 
     .wpp {
       margin-right: 40px;
     }
-
 	}
 `;
