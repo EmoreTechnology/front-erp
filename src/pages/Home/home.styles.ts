@@ -28,7 +28,4 @@ export const AppStyled = styled.div`
   img {
     width: 100%;
   }
-
-  
-  
 `;

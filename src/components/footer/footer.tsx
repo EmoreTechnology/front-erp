@@ -5,7 +5,7 @@ import React from "react";
 import { FooterStyled } from './footer.styles';
 
 // Assets
-import wpp from "../../Assets/whatsapp.png";
+import wpp from "../../Assets/wpp-icon.png";
 import linkedin from "../../Assets/linkedin.png";
 
 function Footer() {
@@ -14,8 +14,6 @@ function Footer() {
       <div className="footer">
 
         <p>Fale Conosco</p>
-
-        <span className="line"></span>
 
         <div className="contacts">
           <img className="wpp" src={wpp} alt="" />
