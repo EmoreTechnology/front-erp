@@ -69,7 +69,7 @@ export const CadastroStyled = styled.div`
           height: 50px;
           margin-bottom: 20px;
 
-          @media (max-width:1024px){
+          @media (min-width:1024px){
             height: 32px;
           }
         }
@@ -86,11 +86,8 @@ export const CadastroStyled = styled.div`
           display: flex;
           margin-bottom: 7px;
 
-          @media (max-width:1024px){
+          @media (min-width:1024px){
             font-size: 14px;
-          }
-          @media (max-width:360px){
-            font-size: 12px;
           }
         }
       }

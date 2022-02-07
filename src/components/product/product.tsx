@@ -7,10 +7,9 @@ import { ProductStyled } from "./product.styles";
 interface IProductsProps {
   createProducts?: string,
   createStock?: string,
-  createCategories?: string,
 }
 
-const ModalProducts = ({createProducts, createStock, createCategories}: IProductsProps) => {
+const ModalProducts = ({createProducts, createStock}: IProductsProps) => {
   return (
     <ProductStyled>
       <div className="container">
@@ -30,13 +29,6 @@ const ModalProducts = ({createProducts, createStock, createCategories}: IProduct
 
         <span/>
 
-        <div className="section">
-          <button>
-            <p>{createCategories}</p>
-          </button>
-        </div>
-
-        <span/>
       </div>
     </ProductStyled>
   );

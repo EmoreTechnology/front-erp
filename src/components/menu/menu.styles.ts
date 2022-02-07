@@ -31,13 +31,13 @@ nav {
     align-items: center;
     justify-content: start;
     background-color: #202020;
-    width: 180px;
     height: 100%;
-    padding: 0 20px 20px 20px;
+    width: 50px;
+    padding: 0 10px 10px 10px;
     
-    @media (max-width:360px) {
-      width: 50px;
-      padding: 0 10px 10px 10px;
+    @media (min-width:768px) {
+      width: 180px;
+      padding: 0 20px 20px 20px;
     }
   }
   
@@ -45,10 +45,6 @@ nav {
     display: flex;
     flex-direction: column;
     width: 100%;
-    
-    @media (max-width:360px) {
-      margin-right: 0px;
-    }
 
     svg {
       width: 25px;
@@ -80,12 +76,11 @@ nav {
     margin: 20px 0 5px 12px;
     
     p {
+      display: none;
       color: #9D9090;
       
-      @media (max-width:360px) {
-        display: none;
-      }
-      @media (max-width:768px) {
+      @media (min-width:768px) {
+        display: flex;
         margin-left: 15px;
       }
     }
@@ -123,20 +118,15 @@ nav {
   
   span {
     display: flex;
-    
-    @media (max-width:360px) {
-      display: none !important;
-    }
   }
   
   .select {
-    display: flex;
+    display: none;
     margin: 30px 0 10px 12px;
-     
-    @media (max-width:360px) {
-      display: none;
+    
+    @media (min-width:768px) {
+      display: flex;
     }
   }
-
 }
 `;
