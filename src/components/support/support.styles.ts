@@ -5,30 +5,23 @@ export const SupportStyled = styled.div`
     align-items: start;
     justify-content: center;
     flex-direction: column;
-    width: 180px;
     position: absolute;
     right: 0px;
     left: 0;
     top: 0;
     z-index: 10;
-    margin: 335px 0px 0px 225px;
+    margin: 335px 0px 0px 85px;
     
-    @media (max-width:768px) {
-      margin: 305px 0px 0px 225px;
+    @media (min-width:768px) {
+      margin: 335px 0px 0px 225px;
     }
-    @media (max-width:360px) {
-      margin: 305px 0px 0px 85px;
-    }
-
+    
     .container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-
-      @media (max-width:360px) {
-        width: 180px;
-      }
+      width: 180px;
     }
     
     button {
@@ -51,10 +44,6 @@ export const SupportStyled = styled.div`
     
     span {
       margin-top: 0px;
-
-      @media (max-width:360px) {
-        display: flex !important;
-      }
     }
 
     .section {

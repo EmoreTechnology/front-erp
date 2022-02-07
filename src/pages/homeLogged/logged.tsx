@@ -53,10 +53,12 @@ function Logged() {
         <span />
 
         <img className="logo" src={logo} alt=""/>
-
+        {/**
+         * 
 				{accordionData.map((item) => (
 					<Accordion title={item.title} content={item.content} />
 				))}
+         */}
       </div>
     </LoggedStyled>
   );
