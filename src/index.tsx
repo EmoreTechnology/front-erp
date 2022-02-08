@@ -1,12 +1,15 @@
 // Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppRoutes from './AppRoutes';
+import AppRoutes from './routes/AppRoutes';
 import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<AppRoutes />
+		<BrowserRouter>
+			<AppRoutes />
+		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
