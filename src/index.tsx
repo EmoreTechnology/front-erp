@@ -2,30 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRoutes from './AppRoutes';
-import { createServer } from 'miragejs';
 import './index.css';
-
-createServer({
-	routes() {
-		this.namespace = 'api';
-		
-		this.get('login', () => {
-			return [
-				{
-					id: 1,
-					email: 'admin',
-					password: '123',
-				}
-			]
-		})
-
-		this.post('login', (schema, request) => {
-			const data = JSON.parse(request.requestBody)
-
-			return data;
-		})
-	}
-})
 
 ReactDOM.render(
 	<React.StrictMode>
