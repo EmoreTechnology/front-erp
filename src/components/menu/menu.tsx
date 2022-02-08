@@ -23,6 +23,10 @@ import ModalRequests from "../requests/requests";
 import ModalFinancial from "../financial/financial";
 import ModalSupport from "../support/support";
 
+//Hooks
+import authService from "../../contexts/auth";
+
+
 const SideBar = ({ openClass, children }: any) => {
 	const [isUserVisible, setIsUserVisible] = useState(false);
 	const [isProductVisible, setIsProductsVisible] = useState(false);
@@ -37,6 +41,10 @@ const SideBar = ({ openClass, children }: any) => {
 	const toggling4 = () => setIsRequestsVisible(!isRequestsVisible);
 	const toggling5 = () => setIsFinancialVisible(!isFinancialVisible);
 	const toggling6 = () => setIsSupportVisible(!isSupportVisible);
+
+	const logOut = () => {
+		authService.logout();
+	};
 
 	return (
 		<MenuStyled>
@@ -73,6 +81,7 @@ const SideBar = ({ openClass, children }: any) => {
 							<ModalProducts
 								createProducts="Cadastro de produtos"
 								createStock="Estoque"
+								createCategories="Categorias"
 							/>
 							: null}
 
@@ -146,12 +155,12 @@ const SideBar = ({ openClass, children }: any) => {
 						<span />
 					</div>
 
-					<div className="sections">
-						<button className="close">
+					<a href="/home" onClick={logOut} className="close">
+						<div className="sections">
 							<FontAwesomeIcon icon={faPowerOff} />
 							<p>Sair</p>
-						</button>
-					</div>
+						</div>
+					</a>
 				</div>
 			</nav>
 		</MenuStyled>

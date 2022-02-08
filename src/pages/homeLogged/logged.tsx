@@ -12,6 +12,7 @@ import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 // Utils
+import SideBar from "../../components/menu/menu";
 import authService from "../../contexts/auth";
 
 function Logged() {
