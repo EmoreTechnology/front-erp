@@ -24,24 +24,16 @@ export const SupportStyled = styled.div`
       width: 180px;
     }
     
-    button {
-      display: flex;
-      flex-direction: row;
+    a {
       align-items: center;
-      justify-content: center;
-      margin-bottom: 0;    
-      background-color: transparent !important;
-      border: none;
-    }
-    
-    p {
       color: #9D9090;
+      font-size: 12px;
+
+      @media (min-width: 768px) {
+        font-size: 16px;
+      }
     }
-    
-    img {
-      margin: 10px;
-    }
-    
+
     span {
       margin-top: 0px;
     }
@@ -57,7 +49,7 @@ export const SupportStyled = styled.div`
       :hover {
         background-color: #818181;
         
-        p {
+        a {
           color: #fff;
         }
       }

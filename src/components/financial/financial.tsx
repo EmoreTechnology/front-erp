@@ -10,30 +10,24 @@ interface IFinancialProps {
   createReports?: string,
 }
 
-const ModalFinancial = ({createPayBills, createBox, createReports}: IFinancialProps)  => {
+const ModalFinancial = ({ createPayBills, createBox, createReports }: IFinancialProps) => {
   return (
     <FinancialStyled>
       <div className="container">
         <div className="section">
-          <button>
-            <p>{createPayBills}</p>
-          </button>
+          <a href="">{createPayBills}</a>
         </div>
 
         <span />
 
         <div className="section">
-          <button>
-            <p>{createBox}</p>
-          </button>
+          <a href="">{createBox}</a>
         </div>
 
         <span />
 
         <div className="section">
-          <button>
-            <p>{createReports}</p>
-          </button>
+          <a href="">{createReports}</a>
         </div>
 
         <span />

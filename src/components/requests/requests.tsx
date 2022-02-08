@@ -10,33 +10,27 @@ interface IRequestsProps {
   closeOrder?: string,
 }
 
-const ModalRequests = ({ createCommand, openOrder, closeOrder}: IRequestsProps) => {
+const ModalRequests = ({ createCommand, openOrder, closeOrder }: IRequestsProps) => {
   return (
     <RequestsStyled>
       <div className="container">
         <div className="section">
-          <button>
-            <p>{createCommand}</p>
-          </button>
+          <a href="">{createCommand}</a>
         </div>
 
-        <span/>
+        <span />
 
         <div className="section">
-          <button>
-            <p>{openOrder}</p>
-          </button>
+          <a href="">{openOrder}</a>
         </div>
 
-        <span/>
+        <span />
 
         <div className="section">
-          <button>
-            <p>{closeOrder}</p>
-          </button>
+          <a href="">{closeOrder}</a>
         </div>
 
-        <span/>
+        <span />
       </div>
     </RequestsStyled>
   );

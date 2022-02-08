@@ -24,22 +24,14 @@ export const PurchasesStyled = styled.div`
     width: 180px;
   }
   
-  button {
-    display: flex;
-    flex-direction: row;
+  a {
     align-items: center;
-    justify-content: center;
-    margin-bottom: 0;    
-    background-color: transparent !important;
-    border: none;
-  }
-  
-  p {
     color: #9D9090;
-  }
-  
-  img {
-    margin: 10px;
+    font-size: 12px;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+    }
   }
   
   span {
