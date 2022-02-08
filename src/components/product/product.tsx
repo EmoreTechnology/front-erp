@@ -9,26 +9,21 @@ interface IProductsProps {
   createStock?: string,
 }
 
-const ModalProducts = ({createProducts, createStock}: IProductsProps) => {
+const ModalProducts = ({ createProducts, createStock }: IProductsProps) => {
   return (
     <ProductStyled>
       <div className="container">
         <div className="section">
-          <button>
-            <p>{createProducts}</p>
-          </button>
+          <a href="">{createProducts}</a>
         </div>
 
-        <span/>
+        <span />
 
         <div className="section">
-          <button>
-            <p>{createStock}</p>
-          </button>
+          <a href="">{createStock}</a>
         </div>
 
-        <span/>
-
+        <span />
       </div>
     </ProductStyled>
   );

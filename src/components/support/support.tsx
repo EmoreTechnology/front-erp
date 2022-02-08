@@ -14,17 +14,13 @@ const ModalSupport = ({ createWpp, createEmail}: ISupportProps) => {
     <SupportStyled>
       <div className="container">
         <div className="section">
-          <button>
-            <p>{createWpp}</p>
-          </button>
+            <a href="">{createWpp}</a>
         </div>
 
         <span/>
 
         <div className="section">
-          <button>
-            <p>{createEmail}</p>
-          </button>
+            <a href="">{createEmail}</a>
         </div>
 
         <span/>

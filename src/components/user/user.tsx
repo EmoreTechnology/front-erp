@@ -1,5 +1,6 @@
 // Dependencies
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Styles
 import { UserStyled } from "./user.styles";
@@ -16,33 +17,25 @@ const ModalUser = ({createUsers, createInfos, createPassword, createRemoveUsers}
     <UserStyled>
       <div className="container">
         <div className="section">
-          <button>
-            <p>{createUsers}</p>
-          </button>
+            <a href="">{createUsers}</a>
         </div>
 
         <span/>
 
         <div className="section">
-          <button>
-            <p>{createInfos}</p>
-          </button>
+          <a href="">{createInfos}</a>
         </div>
 
         <span/>
 
         <div className="section">
-          <button>
-            <p>{createPassword}</p>
-          </button>
+          <a href="">{createPassword}</a>
         </div>
 
         <span/>
 
         <div className="section">
-          <button>
-            <p>{createRemoveUsers}</p>
-          </button>
+          <a href="">{createRemoveUsers}</a>
         </div>
 
         <span/>

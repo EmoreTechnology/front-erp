@@ -15,28 +15,22 @@ const ModalPurchases = ({ createProviders, productEntry, dynamicReport }: IPurch
     <PurchasesStyled>
       <div className="container">
         <div className="section">
-          <button>
-            <p>{createProviders}</p>
-          </button>
+          <a href="">{createProviders}</a>
         </div>
 
-        <span/>
+        <span />
 
         <div className="section">
-          <button>
-            <p>{productEntry}</p>
-          </button>
+          <a href="">{productEntry}</a>
         </div>
 
-        <span/>
+        <span />
 
         <div className="section">
-          <button>
-            <p>{dynamicReport}</p>
-          </button>
+          <a href="">{dynamicReport}</a>
         </div>
 
-        <span/>
+        <span />
       </div>
     </PurchasesStyled>
   );
