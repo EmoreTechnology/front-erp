@@ -1,5 +1,6 @@
 // Dependencies
-import { SyntheticEvent, useCallback, useRef, useState } from 'react';
+import { SyntheticEvent, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 
 // Styles
@@ -12,7 +13,10 @@ import { ButtonLogin } from "../Button/buton";
 import logo from "../../Assets/logo.png";
 
 // Utils
-import { api } from '../../services/api';
+import { IFormData } from '../../contexts/auth.model';
+
+//Hooks
+import authService from '../../contexts/auth';
 
 Modal.setAppElement("#root");
 
@@ -21,16 +25,34 @@ interface ILoginProps {
 	onRequestClose: () => void;
 }
 
-interface IFormData {
-	user: string;
-	pass: string;
-}
-
 function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
-	// useEffect(() => {
-	// 	api.get('http://localhost:3000/api/login')
-	// 		.then(resp => resp.data)
-	// })
+	const emailRef = useRef<any>(null);
+	const passwordRef = useRef<any>(null);
+
+	const navigate = useNavigate();
+
+	const handleLoggedUser = async (e: SyntheticEvent) => {
+		e.preventDefault();
+
+		const data: IFormData = {
+			identifier: String(emailRef.current?.value),
+			password: String(passwordRef.current?.value)
+		}
+
+		try {
+			await authService.login({ identifier: data.identifier, password: data.password }).then(
+				() => {
+					navigate('/logged');
+					window.location.reload();
+				},
+				(error) => {
+					console.log(error);
+				}
+			);
+		} catch (err) {
+			console.log(err);
+		}
+	}
 
 	return (
 		<Modal
@@ -53,7 +75,7 @@ function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
 					backgroundColor: 'rgba(220, 220, 220, 30%)'
 				},
 				content: {
-          display: 'flex',
+					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
 					position: 'relative',
@@ -64,14 +86,13 @@ function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
 		>
 			<Container onSubmit={handleLoggedUser}>
 				<img src={logo} alt="" />
-        
+
 				<div className="input-email">
 					<label> Email:</label>
 
 					<input
 						type="email"
-						value={user}
-						onChange={event => setUser(event.target.value)}
+						ref={emailRef}
 					/>
 				</div>
 
@@ -80,8 +101,7 @@ function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
 
 					<input
 						type="password"
-						value={pass}
-						onChange={event => setPass(event.target.value)}
+						ref={passwordRef}
 					/>
 				</div>
 

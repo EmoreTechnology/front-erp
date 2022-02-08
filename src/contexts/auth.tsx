@@ -1,30 +1,49 @@
-import Axios, { AxiosRequestConfig } from "axios"
+import { api } from "../services/api";
+import { IFormData } from "./auth.model";
 
-export interface Credentials {
-  email: string;
-  password: string;
-}
+const signup = ({ identifier, password }: IFormData) => {
+	return api
+		.post("/signup", {
+			identifier,
+			password,
+		})
+		.then((response) => {
+			if (response.data.accessToken) {
+				localStorage.setItem("user", JSON.stringify(response.data));
+			}
 
-export const onLogin = async (data: Credentials) => {
-  const requestConfig: AxiosRequestConfig = {
-    method: 'post',
-    url: 'http://localhost:3333' + '/login',
-    data
-  }
-  try {
-    const {data: response} = await Axios.request(requestConfig);
-  } catch (e) {
-    console.error(e);
-    return {error: e.response.data.message}
-  }
-}
+			return response.data;
+		});
+};
 
-export const onRegister = async (data: Credentials) => {
-  const requestConfig: AxiosRequestConfig = {
-    method: 'post',
-    url: 'http://localhost:3333' + '/register',
-    data
-  } 
-  const {data: response} = await Axios.request(requestConfig);
-  console.log(response);
-}
+const login = ({ identifier, password }: IFormData) => {
+	return api
+		.post("/api/auth/local", {
+			identifier,
+			password,
+		})
+		.then((response) => {
+			if (response.data.jwt) {
+				localStorage.setItem("user", JSON.stringify(response.data));
+			}
+
+			return response.data;
+		});
+};
+
+const logout = () => {
+	localStorage.removeItem("user");
+};
+
+const getCurrentUser = () => {
+	return JSON.parse(String(localStorage.getItem("user")));
+};
+
+const authService = {
+	signup,
+	login,
+	logout,
+	getCurrentUser,
+};
+
+export default authService;

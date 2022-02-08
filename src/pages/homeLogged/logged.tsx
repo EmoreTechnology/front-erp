@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //Style
@@ -7,8 +7,6 @@ import { LoggedStyled } from './logged.styles';
 
 //Assets
 import logo from "../../Assets/logo.png";
-import iconHome from "../../Assets/icon-home.png";
-import iconLogof from "../../Assets/icon-logof.png";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -19,49 +17,52 @@ import Accordion from "../../components/Accordeon/accordeon.component";
 
 // Utils
 import { accordionData } from "../../utils/mocks/accordeon";
+import authService from "../../contexts/auth";
 
 function Logged() {
 
-  const [on, setOn] = React.useState(false);
+	const [on, setOn] = React.useState(false);
 
-  const handleOn = () => {
-    setOn(!on);
-  };
+	const handleOn = () => {
+		setOn(!on);
+	};
 
-  return (
-    <LoggedStyled>
-      <div className="container">
-        <div className="navbar">
-          <aside className={on ? '' : ''}>
-            <a href="#" onClick={handleOn}>
-              <FontAwesomeIcon icon={faAlignJustify} className="menu-open"/>
-            </a>
-          </aside>
-          {on && <SideBar openClass="open">
-            <aside className={on ? 'to-right' : ''}>
-              <a href="#" onClick={handleOn}>
-                <FontAwesomeIcon icon={faTimes} className="home"/>
-              </a>
-            </aside>
-          </SideBar>}
+	const logOut = () => {
+		authService.logout();
+	};
 
-          <button>
-            <FontAwesomeIcon icon={faSignOutAlt} className="icon-off"/>
-          </button>
-        </div>
+	return (
+		<LoggedStyled>
+			<div className="container">
+				<div className="navbar">
+					<aside className={on ? '' : ''}>
+						<a href="#" onClick={handleOn}>
+							<FontAwesomeIcon icon={faAlignJustify} className="menu-open" />
+						</a>
+					</aside>
+					{on && <SideBar openClass="open">
+						<aside className={on ? 'to-right' : ''}>
+							<a href="#" onClick={handleOn}>
+								<FontAwesomeIcon icon={faTimes} className="home" />
+							</a>
+						</aside>
+					</SideBar>}
 
-        <span />
+					<a href="/home" onClick={logOut}>
+						<FontAwesomeIcon icon={faSignOutAlt} className="icon-off" />
+					</a>
+				</div>
 
-        <img className="logo" src={logo} alt=""/>
-        {/**
+				<img className="logo" src={logo} alt="" />
+				{/**
          * 
 				{accordionData.map((item) => (
 					<Accordion title={item.title} content={item.content} />
 				))}
          */}
-      </div>
-    </LoggedStyled>
-  );
+			</div>
+		</LoggedStyled>
+	);
 }
 
 export default Logged;
