@@ -27,26 +27,44 @@ export const Container = styled.form`
 		flex-direction: column;
 		width: 100%;
 		max-width: 750px;
-		margin: 0 15px 40px 0;
+		margin-bottom: 40px;
+		
+		input {
+			display: flex;
+			width: 100%;
+			height: 40px;
+			border-radius: 8px;
+			background: white;
+		}
 	}
-			
+
 	> .input-password {
 		display: flex;
 		align-items: start;
 		flex-direction: column;
 		width: 100%;
 		max-width: 750px;
-		margin: 0 15px 40px 0;
+		margin-bottom: 40px;
+
+		input {
+			display: flex;
+			width: 100%;
+			height: 40px;
+			border-radius: 8px;
+			background: white;
+		}
 	}
 			
 	label {
 		display: flex;
 		margin-bottom: 8px;
 		font-size: 12px;
-		@media (max-width:1024px){
+		
+		@media (min-width:1024px){
 			font-size: 14px;
 		}
 	}
+
 	> .button-access {
 		display:flex;
 		justify-content: center;

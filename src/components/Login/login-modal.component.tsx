@@ -1,19 +1,22 @@
 // Dependencies
-import { useEffect } from 'react';
+import { SyntheticEvent, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 
 // Styles
 import { Container } from './login-modal.styles';
 
 //Components
-import { Input } from "../Input/input";
 import { ButtonLogin } from "../Button/buton";
 
 // Assets
 import logo from "../../Assets/logo.png";
 
 // Utils
-import { api } from '../../services/api';
+import { IFormData } from '../../contexts/auth.model';
+
+//Hooks
+import authService from '../../contexts/auth';
 
 Modal.setAppElement("#root");
 
@@ -23,10 +26,33 @@ interface ILoginProps {
 }
 
 function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
-	// useEffect(() => {
-	// 	api.get('http://localhost:3000/api/login')
-	// 		.then(resp => resp.data)
-	// })
+	const emailRef = useRef<any>(null);
+	const passwordRef = useRef<any>(null);
+
+	const navigate = useNavigate();
+
+	const handleLoggedUser = async (e: SyntheticEvent) => {
+		e.preventDefault();
+
+		const data: IFormData = {
+			identifier: String(emailRef.current?.value),
+			password: String(passwordRef.current?.value)
+		}
+
+		try {
+			await authService.login({ identifier: data.identifier, password: data.password }).then(
+				() => {
+					navigate('/logged');
+					window.location.reload();
+				},
+				(error) => {
+					console.log(error);
+				}
+			);
+		} catch (err) {
+			console.log(err);
+		}
+	}
 
 	return (
 		<Modal
@@ -49,7 +75,7 @@ function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
 					backgroundColor: 'rgba(220, 220, 220, 30%)'
 				},
 				content: {
-          display: 'flex',
+					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
 					position: 'relative',
@@ -58,23 +84,31 @@ function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
 				}
 			}}
 		>
-			<Container>
+			<Container onSubmit={handleLoggedUser}>
 				<img src={logo} alt="" />
-        
+
 				<div className="input-email">
 					<label> Email:</label>
-					<Input className="email" type="email" appearance="#fff" />
+
+					<input
+						type="email"
+						ref={emailRef}
+					/>
 				</div>
 
 				<div className="input-password">
 					<label> Senha:</label>
-					<Input type="password" appearance="#fff" />
+
+					<input
+						type="password"
+						ref={passwordRef}
+					/>
 				</div>
 
 				<p>Esqueci minha senha</p>
 
 				<div className="button-access">
-					<ButtonLogin appeareance="#fff" background-color="#fff">
+					<ButtonLogin appeareance="#fff" background-color="#fff" type="submit" >
 						<span>Entrar</span>
 					</ButtonLogin>
 				</div>

@@ -1,28 +1,15 @@
 // Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppRoutes from './AppRoutes';
-import { createServer } from 'miragejs';
+import AppRoutes from './routes/AppRoutes';
 import './index.css';
-
-createServer({
-	routes() {
-		this.namespace = 'api';
-		this.get('login', () => {
-			return [
-				{
-					id: 1,
-					email: 'admin',
-					password: '123',
-				}
-			]
-		})
-	}
-})
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<AppRoutes />
+		<BrowserRouter>
+			<AppRoutes />
+		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById('root')
 );

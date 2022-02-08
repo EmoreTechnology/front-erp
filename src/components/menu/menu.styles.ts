@@ -128,5 +128,4 @@ nav {
       display: flex;
     }
   }
-}
 `;
