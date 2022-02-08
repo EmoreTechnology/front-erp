@@ -50,7 +50,7 @@ const SideBar = ({ openClass, children }: any) => {
                 <FontAwesomeIcon icon={faUserCircle} />
                 <p>Usuário</p>
               </div>
-              <img className="select" src={iconSelect} alt=""/>
+              <img className="select" src={iconSelect} alt="" />
             </li>
             {isUserVisible ?
               <ModalUser
@@ -68,13 +68,12 @@ const SideBar = ({ openClass, children }: any) => {
                 <FontAwesomeIcon icon={faListAlt} />
                 <p>Produtos</p>
               </div>
-              <img className="select" src={iconSelect} alt=""/>
+              <img className="select" src={iconSelect} alt="" />
             </li>
             {isProductVisible ?
-              <ModalProducts 
+              <ModalProducts
                 createProducts="Cadastro de produtos"
                 createStock="Estoque"
-                createCategories="Categorias"
               />
               : null}
 
@@ -85,7 +84,7 @@ const SideBar = ({ openClass, children }: any) => {
                 <FontAwesomeIcon icon={faShoppingCart} />
                 <p>Compras</p>
               </div>
-              <img className="select" src={iconSelect} alt=""/>
+              <img className="select" src={iconSelect} alt="" />
             </li>
             {isPurchasesVisible ?
               <ModalPurchases
@@ -102,14 +101,14 @@ const SideBar = ({ openClass, children }: any) => {
                 <FontAwesomeIcon icon={faClipboardList} />
                 <p>Pedidos</p>
               </div>
-              <img className="select" src={iconSelect} alt=""/>
+              <img className="select" src={iconSelect} alt="" />
             </li>
             {isRequestsVisible ?
               <ModalRequests
                 createCommand="Criar comanda"
                 openOrder="Efetuar pedido"
                 closeOrder="Fechar comanda"
-                />
+              />
               : null}
 
             <span />
@@ -119,7 +118,7 @@ const SideBar = ({ openClass, children }: any) => {
                 <FontAwesomeIcon icon={faCoins} />
                 <p>Financeiro</p>
               </div>
-              <img className="select" src={iconSelect} alt=""/>
+              <img className="select" src={iconSelect} alt="" />
             </li>
             {isFinancialVisible ?
               <ModalFinancial
@@ -136,7 +135,7 @@ const SideBar = ({ openClass, children }: any) => {
                 <FontAwesomeIcon icon={faHandsHelping} />
                 <p>Suporte</p>
               </div>
-              <img className="select" src={iconSelect} alt=""/>
+              <img className="select" src={iconSelect} alt="" />
             </li>
             {isSupportVisible ?
               <ModalSupport
@@ -148,12 +147,12 @@ const SideBar = ({ openClass, children }: any) => {
             <span />
           </div>
 
-          <button className="close">
-            <div className="sections">
+          <div className="sections">
+            <button className="close">
               <FontAwesomeIcon icon={faPowerOff} />
               <p>Sair</p>
-            </div>
-          </button>
+            </button>
+          </div>
         </div>
       </nav>
     </MenuStyled>
