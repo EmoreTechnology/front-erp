@@ -19,11 +19,7 @@ function Home() {
 	const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
 	function handleOpenLoginModal() {
-		setIsLoginModalOpen(true);
-	}
-
-	function handleCloseLoginModal() {
-		setIsLoginModalOpen(false);
+		setIsLoginModalOpen(!isLoginModalOpen);
 	}
 
 	return (
@@ -32,7 +28,7 @@ function Home() {
 
 				<Header onOpenLoginModal={handleOpenLoginModal} />
 
-				<LoginModal isOpen={isLoginModalOpen} onRequestClose={handleCloseLoginModal} />
+				<LoginModal isOpen={isLoginModalOpen} onRequestClose={handleOpenLoginModal} />
 
 				<div className="section1">
 					<img src={logo} alt="" />

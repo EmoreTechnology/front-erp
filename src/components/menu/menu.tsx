@@ -81,7 +81,6 @@ const SideBar = ({ openClass, children }: any) => {
 							<ModalProducts
 								createProducts="Cadastro de produtos"
 								createStock="Estoque"
-								createCategories="Categorias"
 							/>
 							: null}
 
