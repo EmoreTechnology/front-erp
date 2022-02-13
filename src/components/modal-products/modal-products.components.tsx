@@ -29,7 +29,7 @@ const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onReques
 					bottom: 0,
 					right: 0,
 					left: 0,
-					backgroundColor: 'rgba(220, 220, 220, 30%)'
+					backgroundColor: 'rgba(0, 0, 0, 0.7',
 				},
 				content: {
 					display: 'flex',

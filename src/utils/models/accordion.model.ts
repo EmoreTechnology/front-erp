@@ -5,6 +5,8 @@ interface AccordionContentProps {
 }
 
 export interface IAccordeonProps {
-	title: string;
+	titleProduct: string;
+	product: string;
+	quantity: number;
 	content: AccordionContentProps;
 }

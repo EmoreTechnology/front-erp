@@ -1,6 +1,8 @@
 export const accordionData = [
 	{
-		title: "Bebida",
+		titleProduct: "Bebida",
+		product: 'produto 1',
+		quantity: 2,
 		content: {
 			name: 'bebida',
 			secondName: '34 caixas',
@@ -8,7 +10,9 @@ export const accordionData = [
 		}
 	},
 	{
-		title: "Comida",
+		titleProduct: "Comida",
+		product: 'produto 2',
+		quantity: 4,
 		content: {
 			name: 'Mc Donalds',
 			secondName: '2 itens',
@@ -16,7 +20,9 @@ export const accordionData = [
 		}
 	},
 	{
-		title: "Cerveja",
+		titleProduct: "Cerveja",
+		product: 'produto 3',
+		quantity: 5,
 		content: {
 			name: 'Corona',
 			secondName: '8 coronas',

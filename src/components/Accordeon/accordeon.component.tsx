@@ -7,17 +7,21 @@ import { Container } from './accordeon.styles';
 // Utils
 import { IAccordeonProps } from '../../utils/models/accordion.model';
 
-const Accordeon: React.FC<IAccordeonProps> = ({ content, title }) => {
+const Accordeon: React.FC<IAccordeonProps> = ({ content, titleProduct, product, quantity }) => {
 	const [isActive, setIsActive] = useState(false);
 
 	return (
 		<Container>
 			<div className="accordion-item">
 				<div
-					className="accordion-title"
+					className={isActive ? `accordion-title-active` : "accordion-title"}
 					onClick={() => setIsActive(!isActive)}
 				>
-					<p>{title}</p>
+					<p>{titleProduct}</p>
+
+					<p>{product}</p>
+
+					<p>{quantity}</p>
 
 					<p>{isActive ? "-" : "+"}</p>
 				</div>
