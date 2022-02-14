@@ -60,7 +60,7 @@ export const RegisterProdutsStyled = styled.div`
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-between;
-			width: 74%;
+			width: 71%;
 			
 			> p {
 				font-size: 18px;

@@ -30,7 +30,7 @@ export const Container = styled.div`
 	.accordion-title,
 	.accordion-title-active,
 	.accordion-content {
-		padding: 14px 18px;
+		padding: 14px 39px;
     margin-top: 1px;
 		
 		> p {

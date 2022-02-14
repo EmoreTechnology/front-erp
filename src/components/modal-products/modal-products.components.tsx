@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { createContext, FormEvent, useState } from 'react';
 import Modal from 'react-modal';
+import { api } from '../../services/api';
+import { IAccordeonProps } from '../../utils/models/accordion.model';
+
 import { Container } from './modal-products.styles';
 
 Modal.setAppElement("#root");
@@ -9,8 +12,51 @@ interface IProductsModalProps {
 	onRequestClose: () => void;
 }
 
+export interface ProductsInput {
+	data: {
+		productTitle: string,
+		quantity: number,
+		description: string,
+		price: number,
+	}
+}
+interface CreateProductsData {
+	createProducts: (produtosInput: ProductsInput) => Promise<void>;
+}
+
+export const CreateProductsContext = createContext<CreateProductsData>({} as CreateProductsData);
 
 const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onRequestClose }) => {
+	const [productTitle, setProductTitle] = useState<string>('');
+	const [quantity, setQuantity] = useState<number>(0);
+	const [description, setDescription] = useState<string>('');
+	const [price, setPrice] = useState<number>(0);
+
+	async function createProducts(produtosInput: ProductsInput) {
+		await api.post('produtos', produtosInput);
+		// const { produto } = response.data;
+		window.location.reload();
+	}
+
+	async function handleCreateProducts(event: FormEvent) {
+		event.preventDefault();
+
+		await createProducts({
+			data: {
+				productTitle,
+				description,
+				price,
+				quantity,
+			}
+		});
+
+		setProductTitle('');
+		setDescription('');
+		setPrice(0);
+		setQuantity(0);
+		onRequestClose();
+	}
+
 	return (
 		<Modal
 			className={"react-modal-content"}
@@ -42,9 +88,18 @@ const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onReques
 			}}
 		>
 			<Container>
-				<div>
-					<p>oi modal de cadastro</p>
-				</div>
+				<CreateProductsContext.Provider value={{ createProducts }}>
+					<div>
+						<form onSubmit={handleCreateProducts}>
+							<input type="product" placeholder='product' value={productTitle} onChange={event => setProductTitle(event.target.value)} />
+							<input type="quantity" placeholder='quantity' value={quantity} onChange={event => setQuantity(Number(event.target.value))} />
+							<input type="description" placeholder='descrição' value={description} onChange={event => setDescription(event.target.value)} />
+							<input type="price" placeholder='valor do product' value={price} onChange={event => setPrice(Number(event.target.value))} />
+
+							<button type='submit'>salvar</button>
+						</form>
+					</div>
+				</CreateProductsContext.Provider>
 			</Container>
 		</Modal>
 	);
