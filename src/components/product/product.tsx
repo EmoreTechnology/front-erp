@@ -5,27 +5,27 @@ import React from "react";
 import { ProductStyled } from "./product.styles";
 
 interface IProductsProps {
-  createProducts?: string,
-  createStock?: string,
+	createProducts?: string,
+	createStock?: string,
 }
 
 const ModalProducts = ({ createProducts, createStock }: IProductsProps) => {
-  return (
-    <ProductStyled>
-      <div className="container">
-        <div className="section">
-          <a href="">{createProducts}</a>
-        </div>
+	return (
+		<ProductStyled>
+			<div className="container">
+				<div className="section">
+					<a href="/register-products">{createProducts}</a>
+				</div>
 
-        <span />
+				<span />
 
-        <div className="section">
-          <a href="">{createStock}</a>
-        </div>
+				<div className="section">
+					<a href="">{createStock}</a>
+				</div>
 
-        <span />
-      </div>
-    </ProductStyled>
-  );
+				<span />
+			</div>
+		</ProductStyled>
+	);
 }
 export default ModalProducts;

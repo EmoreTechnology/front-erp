@@ -1,25 +1,28 @@
 export const accordionData = [
 	{
-		title: "Bebida",
-		content: {
-			name: 'bebida',
-			secondName: '34 caixas',
-			price: 34
+		id: 1,
+		attributes: {
+			productTitle: 'produto 1',
+			quantity: 2,
+			description: '34 caixas',
+			price: 34,
 		}
 	},
 	{
-		title: "Comida",
-		content: {
-			name: 'Mc Donalds',
-			secondName: '2 itens',
-			price: 2
+		id: 2,
+		attributes: {
+			productTitle: 'produto 2',
+			quantity: 4,
+			description: '2 itens',
+			price: 2,
 		}
 	},
 	{
-		title: "Cerveja",
-		content: {
-			name: 'Corona',
-			secondName: '8 coronas',
+		id: 3,
+		attributes: {
+			productTitle: 'produto 3',
+			quantity: 5,
+			description: '8 coronas',
 			price: 6.99
 		}
 	}

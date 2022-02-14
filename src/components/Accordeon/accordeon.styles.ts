@@ -10,7 +10,17 @@ export const Container = styled.div`
 		flex-direction: row;
 		justify-content: space-between;
 		cursor: pointer;
-		background-color: gray;
+		background: #C4C4C4;
+		border: 1px solid rgba(0, 0, 0, 0.25);
+	}
+
+	.accordion-title-active {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		cursor: pointer;
+		background-color: #39b9d2;
+		border: 1px solid rgba(0, 0, 0, 0.25);
 	}
 
 	.accordion-title:hover {
@@ -18,15 +28,20 @@ export const Container = styled.div`
 	}
 
 	.accordion-title,
+	.accordion-title-active,
 	.accordion-content {
-		padding: 1rem;
+		padding: 14px 39px;
+    margin-top: 1px;
+		
+		> p {
+			font-size: 18px;
+		}
 	}
 
 	.accordion-content {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		background-color: #39b9d2;
 
 		> p + p {
 			margin-left: 30px;

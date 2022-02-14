@@ -1,10 +1,8 @@
-interface AccordionContentProps {
-	name: string;
-	secondName: string;
-	price: number;
-}
-
-export interface IAccordeonProps {
-	title: string;
-	content: AccordionContentProps;
+export type IAccordeonProps  = {
+	id?: number;
+	attributes?: any,
+	productTitle?: string | undefined;
+	quantity?: number;
+	description?: string;
+	price?: any;
 }

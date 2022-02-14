@@ -18,7 +18,7 @@ const signup = ({ identifier, password }: IFormData) => {
 
 const login = ({ identifier, password }: IFormData) => {
 	return api
-		.post("/api/auth/local", {
+		.post("auth/local", {
 			identifier,
 			password,
 		})

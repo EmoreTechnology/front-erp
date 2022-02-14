@@ -7,7 +7,7 @@ import Modal from 'react-modal';
 import { Container } from './login-modal.styles';
 
 //Components
-import { ButtonLogin } from "../Button/buton";
+import ButtonComponent from "../Button/buton";
 
 // Assets
 import logo from "../../Assets/logo.png";
@@ -108,9 +108,9 @@ function LoginModal({ isOpen, onRequestClose }: ILoginProps) {
 				<p>Esqueci minha senha</p>
 
 				<div className="button-access">
-					<ButtonLogin appeareance="#fff" background-color="#fff" type="submit" >
+					<ButtonComponent appeareance="#fff" background-color="#fff" type="submit" >
 						<span>Entrar</span>
-					</ButtonLogin>
+					</ButtonComponent>
 				</div>
 			</Container>
 		</Modal >
