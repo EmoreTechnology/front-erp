@@ -1,7 +1,8 @@
 import React, { createContext, FormEvent, useState } from 'react';
 import Modal from 'react-modal';
 import { api } from '../../services/api';
-import { IAccordeonProps } from '../../utils/models/accordion.model';
+import { selectOptionMeasurement, selectOptionsCategories } from '../../utils/mocks/select';
+import SelectComponent from '../select/select.component';
 
 import { Container } from './modal-products.styles';
 
@@ -34,7 +35,7 @@ const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onReques
 
 	async function createProducts(produtosInput: ProductsInput) {
 		await api.post('produtos', produtosInput);
-		// const { produto } = response.data;
+
 		window.location.reload();
 	}
 
@@ -90,13 +91,88 @@ const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onReques
 			<Container>
 				<CreateProductsContext.Provider value={{ createProducts }}>
 					<div>
-						<form onSubmit={handleCreateProducts}>
-							<input type="product" placeholder='product' value={productTitle} onChange={event => setProductTitle(event.target.value)} />
-							<input type="quantity" placeholder='quantity' value={quantity} onChange={event => setQuantity(Number(event.target.value))} />
-							<input type="description" placeholder='descrição' value={description} onChange={event => setDescription(event.target.value)} />
-							<input type="price" placeholder='valor do product' value={price} onChange={event => setPrice(Number(event.target.value))} />
+						<h2>Cadastro</h2>
 
-							<button type='submit'>salvar</button>
+						<form onSubmit={handleCreateProducts}>
+							<div className="left">
+								<label htmlFor="">Nome do Produto:</label>
+								<input
+									className="input"
+									type="text"
+									value={productTitle}
+									onChange={event => setProductTitle(event.target.value)}
+								/>
+
+								<label htmlFor="">Cod. Produto:</label>
+								<input
+									className="input"
+									type="number"
+								/>
+
+								<label htmlFor="">Qtd.:</label>
+								<input
+									className="input"
+									type="number"
+									value={quantity}
+									onChange={event => setQuantity(Number(event.target.value))}
+								/>
+
+								{selectOptionsCategories.map((i) =>
+									<SelectComponent
+										className="select"
+										title={i.title}
+										type={i.type}
+										categories={i.categories}
+									/>
+								)}
+
+								<label htmlFor="">Vlr. Produto:</label>
+								<input
+									className="input"
+									type="number"
+									value={price} onChange={event => setPrice(Number(event.target.value))}
+								/>
+							</div>
+
+							<div className="right">
+								<label htmlFor="">Data de inclusão:</label>
+								<input
+									className="input"
+									type="date"
+								/>
+
+								{selectOptionMeasurement.map((i) =>
+									<SelectComponent
+										className="select"
+										title={i.title}
+										type={i.type}
+										measurement={i.measurement}
+									/>
+								)}
+
+								<label htmlFor="">Descrição:</label>
+								<input
+									className="input"
+									type="text"
+									value={description} onChange={event => setDescription(event.target.value)}
+								/>
+
+								<label htmlFor="">Vlr. Minimo Estoque:</label>
+								<input
+									className="input"
+									type="number"
+								/>
+
+								<label htmlFor="">Vlr. Venda:</label>
+								<input
+									className="input"
+									type="number"
+								/>
+
+								<div className="buttons">
+									<button type='submit'>salvar</button>
+								</div>
+							</div>
 						</form>
 					</div>
 				</CreateProductsContext.Provider>

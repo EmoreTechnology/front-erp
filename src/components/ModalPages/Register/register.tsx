@@ -2,7 +2,7 @@
 import { CadastroStyled } from './register.styles';
 import React, { useState } from "react";
 
-import { Input } from "../../Input/input";
+import { Input } from "../../Input/input.component";
 import { ButtonLogin } from "../../Button/buton";
 import logo from "../../../Assets/logo.png";
 import { onRegister } from '../../../contexts/auth';

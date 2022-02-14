@@ -5,4 +5,5 @@ export default interface ButtonProps
   appeareance?: string;
   children?: React.ReactNode;
   label?: string;
+  title?: string;
 }
