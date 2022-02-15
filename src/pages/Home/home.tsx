@@ -16,30 +16,30 @@ import Slide from "../../components/slide/slide";
 import Header from "../../components/header/header";
 
 function Home() {
-	const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
-	function handleOpenLoginModal() {
-		setIsLoginModalOpen(!isLoginModalOpen);
-	}
+  function handleOpenLoginModal() {
+    setIsLoginModalOpen(!isLoginModalOpen);
+  }
 
-	return (
-		<AppStyled>
-			<div className="container">
+  return (
+    <AppStyled>
+      <div className="container">
 
-				<Header onOpenLoginModal={handleOpenLoginModal} />
+        <Header onOpenLoginModal={handleOpenLoginModal} />
 
-				<LoginModal isOpen={isLoginModalOpen} onRequestClose={handleOpenLoginModal} />
+        <LoginModal isOpen={isLoginModalOpen} onRequestClose={handleOpenLoginModal} />
 
-				<div className="section1">
-					<img src={logo} alt="" />
-				</div>
+        <div className="section1">
+          <img src={logo} alt="" />
+        </div>
 
-				<Slide />
+        <Slide />
 
-				<Footer />
-			</div>
-		</AppStyled>
-	);
+        <Footer />
+      </div>
+    </AppStyled>
+  );
 }
 
 export default Home;
