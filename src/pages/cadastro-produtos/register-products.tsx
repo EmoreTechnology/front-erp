@@ -64,7 +64,7 @@ const RegisterProducts: React.FC = () => {
               productTitle={item.attributes.productTitle}
               quantity={item.attributes.quantity}
               shelfLife={new Intl.DateTimeFormat('pt-br').format(
-                new Date(item.attributes.shelfLife)
+                new Date(item.attributes.registerDate)
               )}
               price={new Intl.NumberFormat('pt-br', {
                 style: 'currency',
@@ -75,6 +75,7 @@ const RegisterProducts: React.FC = () => {
                 currency: 'BRL'
               }).format(item.attributes.valueSale)}
               minValueStock={item.attributes.minValueStock}
+              providerName={item.attributes.providerName}
               registerDate={new Intl.DateTimeFormat('pt-br').format(
                 new Date(item.attributes.registerDate)
               )}

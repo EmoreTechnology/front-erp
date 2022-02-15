@@ -8,5 +8,5 @@ export type IAccordeonProps  = {
   valueSale?: number;
   minValueStock?: number; 
   registerDate?: string; 
-  provider?: string | undefined; 
+  providerName?: string | undefined
 }

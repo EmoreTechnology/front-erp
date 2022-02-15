@@ -22,7 +22,7 @@ export interface ProductsInput {
     valueSale: number,
     minValueStock: number,
     registerDate: any,
-    provider: string
+    providerName: string
   }
 }
 interface CreateProductsData {
@@ -39,7 +39,7 @@ const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onReques
   const [valueSale, setValueSale] = useState<number>(0);
   const [minValueStock, setMinValueStock] = useState<number>(0);
   const [registerDate] = useState<any>(new Date());
-  const [provider, setProvider] = useState<string>('');
+  const [providerName, setProviderName] = useState<string>('');
 
   async function createProducts(produtosInput: ProductsInput) {
     await api.post('produtos', produtosInput);
@@ -59,7 +59,7 @@ const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onReques
         valueSale,
         minValueStock,
         registerDate,
-        provider,
+        providerName,
       }
     });
 
@@ -69,7 +69,7 @@ const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onReques
     setQuantity(0);
     setValueSale(0);
     setMinValueStock(0);
-    setProvider('');
+    setProviderName('');
     onRequestClose();
   }
 
@@ -122,7 +122,7 @@ const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onReques
                 <input
                   className="input"
                   type="text"
-                  value={provider} onChange={event => setProvider(event.target.value)}
+                  value={providerName} onChange={event => setProviderName(event.target.value)}
                 />
 
                 <label htmlFor="">Qtd.:</label>
