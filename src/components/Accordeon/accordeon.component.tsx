@@ -7,35 +7,42 @@ import { Container } from './accordeon.styles';
 // Utils
 import { IAccordeonProps } from '../../utils/models/accordion.model';
 
-const Accordeon: React.FC<IAccordeonProps> = ({ price, description, id, productTitle, quantity }) => {
-	const [isActive, setIsActive] = useState(false);
+const Accordeon: React.FC<IAccordeonProps> = ({ price, description, id, productTitle, quantity, valueSale, minValueStock, registerDate }) => {
+  const [isActive, setIsActive] = useState(false);
 
-	return (
-		<Container>
-			<div className="accordion-item">
-				<div
-					className={isActive ? `accordion-title-active` : "accordion-title"}
-					onClick={() => setIsActive(!isActive)}
-				>
-					<p>{id}</p>
+  return (
+    <Container>
+      <div className="accordion-item">
+        <div
+          className={isActive ? `accordion-title-active` : "accordion-title"}
+          onClick={() => setIsActive(!isActive)}
+        >
+          <p>{id}</p>
 
-					<p>{productTitle}</p>
+          <p>{productTitle}</p>
 
-					<p>{quantity}</p>
+          <p>{quantity}</p>
 
-					<p>{isActive ? "-" : "+"}</p>
-				</div>
+          <p>{isActive ? "-" : "+"}</p>
+        </div>
 
-				{isActive &&
-					<div className="accordion-content">
-						<p>Descrição: {description}</p>
+        {isActive &&
+          <div className="accordion-content">
 
-						<p>Preço: {price}</p>
-					</div>
-				}
-			</div>
-		</Container>
-	);
+            <p>Data: {registerDate}</p>
+
+            <p>Descrição: {description}</p>
+
+            <p>Preço: {price}</p>
+
+            <p>Valor venda: {valueSale}</p>
+
+            <p>Quantida mín estoque: {minValueStock}</p>
+          </div>
+        }
+      </div>
+    </Container>
+  );
 }
 
 export default Accordeon;

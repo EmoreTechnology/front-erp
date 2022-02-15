@@ -5,4 +5,7 @@ export type IAccordeonProps  = {
 	quantity?: number;
 	description?: string;
 	price?: any;
+  valueSale?: number;
+  minValueStock?: number; 
+  registerDate?: string; 
 }
