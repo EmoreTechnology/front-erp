@@ -17,11 +17,12 @@ export interface ProductsInput {
   data: {
     productTitle: string,
     quantity: number,
-    description: string,
+    shelfLife: any,
     price: number,
     valueSale: number,
     minValueStock: number,
     registerDate: any,
+    provider: string
   }
 }
 interface CreateProductsData {
@@ -33,11 +34,12 @@ export const CreateProductsContext = createContext<CreateProductsData>({} as Cre
 const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onRequestClose }) => {
   const [productTitle, setProductTitle] = useState<string>('');
   const [quantity, setQuantity] = useState<number>(0);
-  const [description, setDescription] = useState<string>('');
+  const [shelfLife, setShelfLife] = useState<any>(new Date());
   const [price, setPrice] = useState<number>(0);
   const [valueSale, setValueSale] = useState<number>(0);
   const [minValueStock, setMinValueStock] = useState<number>(0);
   const [registerDate] = useState<any>(new Date());
+  const [provider, setProvider] = useState<string>('');
 
   async function createProducts(produtosInput: ProductsInput) {
     await api.post('produtos', produtosInput);
@@ -51,21 +53,23 @@ const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onReques
     await createProducts({
       data: {
         productTitle,
-        description,
+        shelfLife,
         price,
         quantity,
         valueSale,
         minValueStock,
-        registerDate
+        registerDate,
+        provider,
       }
     });
 
     setProductTitle('');
-    setDescription('');
+    setShelfLife(new Date().toLocaleDateString());
     setPrice(0);
     setQuantity(0);
     setValueSale(0);
     setMinValueStock(0);
+    setProvider('');
     onRequestClose();
   }
 
@@ -112,12 +116,13 @@ const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onReques
                   type="text"
                   value={productTitle}
                   onChange={event => setProductTitle(event.target.value)}
-                />
+                  />
 
-                <label htmlFor="">Cod. Produto:</label>
+                <label htmlFor="">Fornecedores:</label>
                 <input
                   className="input"
-                  type="number"
+                  type="text"
+                  value={provider} onChange={event => setProvider(event.target.value)}
                 />
 
                 <label htmlFor="">Qtd.:</label>
@@ -157,11 +162,11 @@ const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onReques
                   />
                 )}
 
-                <label htmlFor="">Descrição:</label>
+                <label htmlFor="">Validade:</label>
                 <input
                   className="input"
-                  type="text"
-                  value={description} onChange={event => setDescription(event.target.value)}
+                  type="date"
+                  value={shelfLife} onChange={event => setShelfLife(event.target.value)}
                 />
 
                 <label htmlFor="">Vlr. Minimo Estoque:</label>

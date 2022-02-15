@@ -3,9 +3,10 @@ export type IAccordeonProps  = {
 	attributes?: any,
 	productTitle?: string | undefined;
 	quantity?: number;
-	description?: string;
+	shelfLife?: string;
 	price?: any;
   valueSale?: number;
   minValueStock?: number; 
   registerDate?: string; 
+  provider?: string | undefined; 
 }

@@ -7,7 +7,7 @@ import { Container } from './accordeon.styles';
 // Utils
 import { IAccordeonProps } from '../../utils/models/accordion.model';
 
-const Accordeon: React.FC<IAccordeonProps> = ({ price, description, id, productTitle, quantity, valueSale, minValueStock, registerDate }) => {
+const Accordeon: React.FC<IAccordeonProps> = ({ price, shelfLife, id, productTitle, quantity, valueSale, minValueStock, registerDate, provider }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -31,7 +31,9 @@ const Accordeon: React.FC<IAccordeonProps> = ({ price, description, id, productT
 
             <p>Data: {registerDate}</p>
 
-            <p>Descrição: {description}</p>
+            <p>Fornecedor: {provider}</p>
+
+            <p>Validade: {shelfLife}</p>
 
             <p>Preço: {price}</p>
 

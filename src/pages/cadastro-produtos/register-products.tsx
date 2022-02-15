@@ -63,7 +63,9 @@ const RegisterProducts: React.FC = () => {
               id={item.id}
               productTitle={item.attributes.productTitle}
               quantity={item.attributes.quantity}
-              description={item.attributes.description}
+              shelfLife={new Intl.DateTimeFormat('pt-br').format(
+                new Date(item.attributes.shelfLife)
+              )}
               price={new Intl.NumberFormat('pt-br', {
                 style: 'currency',
                 currency: 'BRL'
