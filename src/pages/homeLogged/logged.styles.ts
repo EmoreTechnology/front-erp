@@ -5,28 +5,8 @@ export const LoggedStyled = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-	width: 100%;
 	color: white;
   font-family:"Poppins";
-  
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    padding:10px;
-  }
-  
-  span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 1px;
-    width: 100%;
-    background-color: white;
-  }
   
   .logo {
     width: 100%;
@@ -44,14 +24,14 @@ export const LoggedStyled = styled.div`
 
   .to-right {
     display: flex;
-    margin: 25px 0 20px 40px;  
+    margin: 25px 0 20px 120px;  
 
     @media (min-width:768px) {    
-    margin: 25px 0 20px 210px;
+    margin: 25px 0 20px 270px;
     }
 
     @media (min-width:1440px) {    
-    margin: 25px 0 20px 210px;
+    margin: 25px 0 20px 280px;
     }
   }
 `;

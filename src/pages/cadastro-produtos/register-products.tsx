@@ -1,10 +1,12 @@
 // Dendencies
 import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Components
 import Accordeon from '../../components/Accordeon/accordeon.component';
 import ModalFilter from '../../components/filter/modal-filter.component';
 import ModalRegisterProducts from '../../components/modal-products/modal-products.components';
+import Navbar from '../../components/navbar/navbar.component';
 
 // Hooks
 import { ProdutosContext } from '../../contexts/productsContext';
@@ -13,6 +15,9 @@ import { IAccordeonProps } from '../../utils/models/accordion.model';
 
 // Styles
 import { RegisterProdutsStyled } from './register-products.styles';
+
+// Assets
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 const RegisterProducts: React.FC = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
@@ -36,7 +41,10 @@ const RegisterProducts: React.FC = () => {
     <RegisterProdutsStyled>
       <ProdutosContext.Provider value={produtos}>
         <div className="header">
-          <p>Produtos</p>
+
+          <Navbar />
+
+          <h1>Produtos</h1>
 
           <ModalRegisterProducts isOpen={isLoginModalOpen} onRequestClose={handleOpenLoginModal} />
           <ModalFilter isOpen={isFilterModalOpen} onRequestClose={handleOpenFilterModal}></ModalFilter>

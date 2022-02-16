@@ -19,7 +19,9 @@ nav {
   }
   
   a {
+    width: 100%;
     text-decoration: none;
+    justify-content: center;
   }
   
   nav a {
@@ -28,12 +30,12 @@ nav {
   
   .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: start;
     background-color: #202020;
     height: 100%;
-    width: 50px;
-    padding: 0 10px 10px 10px;
+    width: 70px;
     
     @media (min-width:768px) {
       width: 180px;
@@ -70,11 +72,16 @@ nav {
   
   .sections {
     display: flex;
+    width: 100%;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 20px 0 5px 12px;
+    margin: 20px 0 5px 0px;
     
+    @media (min-width:768px) {
+      display: flex;
+      justify-content: start;
+    }
     p {
       display: none;
       color: #9D9090;
@@ -96,7 +103,7 @@ nav {
     border: none;
     width: 100%;
     height: 50px;
-    margin: 50px 20px 50px 0;
+    margin: 50px 0 50px 0;
 
     p {
       font-size: 18px;

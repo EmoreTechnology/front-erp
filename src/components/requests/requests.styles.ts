@@ -10,10 +10,10 @@ export const RequestsStyled = styled.div`
   left: 0;
   top: 0;
   z-index: 10;
-  margin: 235px 0px 0px 85px;
+  margin: 285px 0px 0px 85px;
   
   @media (min-width:768px) {
-    margin: 235px 0px 0px 225px;
+    margin: 285px 0px 0px 225px;
   }
   
   .container {

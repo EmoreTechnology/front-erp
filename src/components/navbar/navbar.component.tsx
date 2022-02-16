@@ -9,7 +9,6 @@ import { NavbarStyled } from "./navbar.styles";
 import SideBar from "../menu/menu";
 
 // Assets
-import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -31,7 +30,7 @@ function Navbar() {
 	return (
 		<NavbarStyled>
 			<div className="navbar">
-				<aside className={on ? '' : ''}>
+				<aside className={on ? 'icon-menu' : ''}>
 					<a href="#" onClick={handleOn}>
 						<FontAwesomeIcon icon={faAlignJustify} className="menu-open" />
 					</a>
@@ -44,9 +43,6 @@ function Navbar() {
 					</aside>
 				</SideBar>}
 
-				<a href="/home" onClick={logOut}>
-					<FontAwesomeIcon icon={faSignOutAlt} className="icon-off" />
-				</a>
 			</div>
 		</NavbarStyled>
 	);

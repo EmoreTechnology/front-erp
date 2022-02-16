@@ -12,12 +12,15 @@ export const RegisterProdutsStyled = styled.div`
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		justify-content: space-between;
-		padding: 24px;
+		justify-content: start;
+		padding: 10px;
 
 		> .buttons {
 			display: flex;
 			flex-direction: row;
+      width: 100%;
+      justify-content: end;
+      margin-right: 20px;
 
 			> .register {
         background: #4361EE;
@@ -45,7 +48,6 @@ export const RegisterProdutsStyled = styled.div`
 				margin-left: 4px;
 			}
 		}
-
 	}
 	span {
 		width: 100%;
@@ -70,21 +72,38 @@ export const RegisterProdutsStyled = styled.div`
 				font-size: 18px;
 			}
 		}
-
 	}
-
-  p {
-    color: black;
-    font-size: 30px;
-
-    @media (min-width: 768px) {
-      font-size: 56px;
-    }
-  }
 
 	button {
 		height: 40px;
 		width: 120px;
-
 	}
+
+  .opneSidebar {
+    transition: 0.7s;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+  }
+
+  .menu-open {
+    color: #000 !important;
+  }
+
+  .to-right {
+    display: flex;
+    margin: 25px 0 20px 120px;  
+    
+    @media (min-width:768px) {    
+      margin: 25px 0 20px 270px;
+    }
+    
+    @media (min-width:1440px) {    
+      margin: 25px 0 20px 280px;
+    }
+
+    svg {
+      color:#000;
+    }
+  }
 `;

@@ -30,11 +30,9 @@ function Logged() {
 
 	return (
 		<LoggedStyled>
-			<div className="container">
 				<Navbar />
 
 				<img className="logo" src={logo} alt="" />
-			</div>
 		</LoggedStyled>
 	);
 }
