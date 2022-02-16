@@ -20,21 +20,25 @@ export const RegisterProdutsStyled = styled.div`
 			flex-direction: row;
 
 			> .register {
-				background: #4361EE;
+        background: #4361EE;
 				color: #FFFFFF;
 			}
-
+      
 			> .filter {
-				background-color: rgb(117 111 111 / 0.3);
+        background-color: rgb(117 111 111 / 0.3);
     		color: black;
 			}
-
+      
 			button {
-				border-radius: 6px;
+        border-radius: 6px;
 				height: 40px;
-				width: 120px;
+				width: 90px;
 				border: none;
 				cursor: pointer;
+
+        @media (min-width: 768px) {
+          width: 120px
+        }
 			}
 			
 			button + button {
@@ -71,11 +75,16 @@ export const RegisterProdutsStyled = styled.div`
 
   p {
     color: black;
-    font-size: 56px;
+    font-size: 30px;
+
+    @media (min-width: 768px) {
+      font-size: 56px;
+    }
   }
 
 	button {
 		height: 40px;
 		width: 120px;
+
 	}
 `;

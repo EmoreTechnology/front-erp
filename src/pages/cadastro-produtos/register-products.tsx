@@ -36,7 +36,7 @@ const RegisterProducts: React.FC = () => {
     <RegisterProdutsStyled>
       <ProdutosContext.Provider value={produtos}>
         <div className="header">
-          <p>Register Products</p>
+          <p>Produtos</p>
 
           <ModalRegisterProducts isOpen={isLoginModalOpen} onRequestClose={handleOpenLoginModal} />
           <ModalFilter isOpen={isFilterModalOpen} onRequestClose={handleOpenFilterModal}></ModalFilter>
