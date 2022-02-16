@@ -22,7 +22,7 @@ export const Container = styled.div`
     border-radius: 16px;
 
 		> p {
-			color: white;
+      color: white;
 		}
 
     h2 {
@@ -30,9 +30,13 @@ export const Container = styled.div`
     }
 
 		> form {
-			display: flex;
-			flex-direction: row;
+      display: flex;
+			flex-direction: column;
 			width: 100%;
+      
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
 
 			> .left {
 				display: flex;
@@ -47,11 +51,15 @@ export const Container = styled.div`
 				> input {
 					display: flex;
 					width: 100%;
-					height: 58px;
+					height: 30px;
 					border-radius: 8px;
 					background: white;
 					color: #000;
   				border: 1px solid #7D7D7D;
+
+          @media (min-width: 768px) {
+            height: 58px;
+          }
 				}
 				
 				> .select {
@@ -62,9 +70,9 @@ export const Container = styled.div`
           }
 				}
 			}
-
+      
 			> .right {
-				display: flex;
+        display: flex;
 				flex-direction: column;
 				width: 100%;
         
@@ -76,11 +84,15 @@ export const Container = styled.div`
 				> input {
           display: flex;
 					width: 100%;
-					height: 58px;
+					height: 30px;
 					border-radius: 8px;
 					background: white;
 					color: #000;
   				border: 1px solid #7D7D7D;
+
+          @media (min-width: 768px) {
+            height: 58px;
+          }
 				}
         
         > p {
@@ -89,7 +101,11 @@ export const Container = styled.div`
           background-color: #fff;
           border-radius: 8px;
           border: 1px solid #7D7D7D;
-          height: 58px;
+          height: 30px;
+
+          @media (min-width: 768px) {
+            height: 58px;
+          }
         }
 
 				> .select {
@@ -123,7 +139,11 @@ export const Container = styled.div`
 			}
 
 			> div + div {
-				margin-left: 22px;
+        display: flex;
+
+        @media (min-width: 768px) {
+          margin-left: 22px;
+        }
 			}
 		}
 	}
