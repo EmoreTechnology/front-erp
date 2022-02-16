@@ -15,6 +15,14 @@ export const RegisterProdutsStyled = styled.div`
 		justify-content: start;
 		padding: 10px;
 
+    > h1 {
+      font-size: 18px;
+
+      @media (min-width: 768px) {
+        font-size: 38px;
+      }      
+    }
+
 		> .buttons {
 			display: flex;
 			flex-direction: row;
@@ -88,6 +96,7 @@ export const RegisterProdutsStyled = styled.div`
 
   .menu-open {
     color: #000 !important;
+    margin: 0px !important;
   }
 
   .to-right {
