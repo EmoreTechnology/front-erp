@@ -1,9 +1,15 @@
+// Dependencies
 import React, { createContext, FormEvent, useState } from 'react';
 import Modal from 'react-modal';
-import { api } from '../../services/api';
-import { selectOptionMeasurement, selectOptionsCategories } from '../../utils/mocks/select';
+
+// Components
 import SelectComponent from '../select/select.component';
 
+// Utils
+import { api } from '../../services/api';
+import { selectOptionMeasurement, selectOptionsCategories } from '../../utils/mocks/select';
+
+// Style
 import { Container } from './modal-products.styles';
 
 Modal.setAppElement("#root");

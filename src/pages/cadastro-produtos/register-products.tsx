@@ -1,6 +1,9 @@
 // Dendencies
 import React, { useEffect, useState } from 'react';
+
+// Components
 import Accordeon from '../../components/Accordeon/accordeon.component';
+import ModalFilter from '../../components/filter/modal-filter.component';
 import ModalRegisterProducts from '../../components/modal-products/modal-products.components';
 
 // Hooks
@@ -13,6 +16,7 @@ import { RegisterProdutsStyled } from './register-products.styles';
 
 const RegisterProducts: React.FC = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState<boolean>(false);
   const [produtos, setProdutos] = useState<IAccordeonProps[]>([]);
 
   useEffect(() => {
@@ -24,8 +28,8 @@ const RegisterProducts: React.FC = () => {
     setIsLoginModalOpen(!isLoginModalOpen);
   }
 
-  const handleOpenFilterModal = () => {
-    console.log('clicou no filtro');
+  function handleOpenFilterModal() {
+    setIsFilterModalOpen(!isFilterModalOpen);
   }
  
   return (
@@ -35,7 +39,7 @@ const RegisterProducts: React.FC = () => {
           <p>Register Products</p>
 
           <ModalRegisterProducts isOpen={isLoginModalOpen} onRequestClose={handleOpenLoginModal} />
-
+          <ModalFilter isOpen={isFilterModalOpen} onRequestClose={handleOpenFilterModal}></ModalFilter>
           <div className="buttons">
             <button className="register" onClick={handleOpenLoginModal}>Cadastrar</button>
 
