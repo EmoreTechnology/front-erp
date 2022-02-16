@@ -25,6 +25,10 @@ export const Container = styled.div`
 			color: white;
 		}
 
+    h2 {
+      font-size: 40px;
+    }
+
 		> form {
 			display: flex;
 			flex-direction: row;
@@ -36,7 +40,7 @@ export const Container = styled.div`
 				width: 100%;
 
 				> label {
-					margin-top: 8px;
+					margin: 20px 0 5px 0;
 					color: #000000;
 				}
 
@@ -51,7 +55,11 @@ export const Container = styled.div`
 				}
 				
 				> .select {
-					padding-top: 8px;
+					margin: 20px 0 0px 0;
+          
+          p {
+            margin-bottom: 5px;
+          }
 				}
 			}
 
@@ -61,7 +69,7 @@ export const Container = styled.div`
 				width: 100%;
         
 				> label {
-          margin-top: 8px;
+					margin: 20px 0 5px 0;
 					color: #000000;
 				}
 				
@@ -85,12 +93,16 @@ export const Container = styled.div`
         }
 
 				> .select {
-					padding-top: 8px;
+					margin: 20px 0 0px 0;
+          
+          p {
+            margin-bottom: 5px;
+          }
 				}
 
 				> .buttons {
 					display: flex;
-					align-items: center;
+					align-items: end;
 					justify-content: flex-end;
 					width: 100%;
 					margin-top: 8px;
