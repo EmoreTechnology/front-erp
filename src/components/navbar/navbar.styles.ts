@@ -27,17 +27,21 @@ width: 100%;
     .home {
       height: 40px !important;
       width: 45px !important;
-      margin-left: 100px;
-
-      @media (min-width:768px) {
-        margin-left: 75px;
-      }
     }
     
     svg {
       color: #fff;
       width: 37px;
       height: 32px;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 1px;
+      width: 100%;
+      background-color: white;
     }
   }
 `;
