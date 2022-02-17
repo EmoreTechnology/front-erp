@@ -39,11 +39,16 @@ export const RegisterProdutsStyled = styled.div`
         background-color: rgb(117 111 111 / 0.3);
     		color: black;
 			}
+
+			> .new-amount {
+        background-color: rgb(117 111 111 / 0.3);
+    		color: black;
+			}
       
 			button {
         border-radius: 6px;
 				height: 40px;
-				width: 90px;
+				width: 100%;
 				border: none;
 				cursor: pointer;
 
@@ -98,6 +103,9 @@ export const RegisterProdutsStyled = styled.div`
     color: #000 !important;
     margin: 0px !important;
   }
+  
+  .accordion-content{
+    display: list-item;
 
   .to-right {
     display: flex;

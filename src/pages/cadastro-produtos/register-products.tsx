@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Components
 import Accordeon from '../../components/Accordeon/accordeon.component';
 import ModalFilter from '../../components/filter/modal-filter.component';
+import ModalNewAmount from '../../components/modal-new-amount/modal-new-amount.component';
 import ModalRegisterProducts from '../../components/modal-products/modal-products.components';
 import Navbar from '../../components/navbar/navbar.component';
 
@@ -22,6 +23,7 @@ import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 const RegisterProducts: React.FC = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
   const [isFilterModalOpen, setIsFilterModalOpen] = useState<boolean>(false);
+  const [isNewAmountModalOpen, setIsNewAmountModalOpen] = useState<boolean>(false);
   const [produtos, setProdutos] = useState<IAccordeonProps[]>([]);
 
   useEffect(() => {
@@ -36,6 +38,10 @@ const RegisterProducts: React.FC = () => {
   function handleOpenFilterModal() {
     setIsFilterModalOpen(!isFilterModalOpen);
   }
+
+  function handleOpenNewAmountModal() {
+    setIsNewAmountModalOpen(!isNewAmountModalOpen);
+  }
  
   return (
     <RegisterProdutsStyled>
@@ -48,10 +54,14 @@ const RegisterProducts: React.FC = () => {
 
           <ModalRegisterProducts isOpen={isLoginModalOpen} onRequestClose={handleOpenLoginModal} />
           <ModalFilter isOpen={isFilterModalOpen} onRequestClose={handleOpenFilterModal}></ModalFilter>
+          <ModalNewAmount isOpen={isNewAmountModalOpen} onRequestClose={handleOpenNewAmountModal}/>
           <div className="buttons">
             <button className="register" onClick={handleOpenLoginModal}>Cadastrar</button>
 
             <button className="filter" onClick={handleOpenFilterModal}>Filtrar</button>
+
+            <button className="new-amount" onClick={handleOpenNewAmountModal}>Nova quantidade</button>
+
           </div>
         </div>
 
