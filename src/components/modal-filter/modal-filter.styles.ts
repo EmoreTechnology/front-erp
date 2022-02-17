@@ -22,6 +22,22 @@ export const Container = styled.div`
 		background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #004E89 0%, rgba(0, 78, 137, 0) 100%);
     border-radius: 16px;
 
+    > .top {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      > svg {
+        width: 35px;
+        height: 35px;
+      }
+
+      h2 {
+        font-size: 35px;
+      }
+    }
+
     input {
       display: flex;
       width: 100%;
@@ -56,12 +72,16 @@ export const Container = styled.div`
           justify-content: space-between;
 
           button {
-            width: 180px;
+            width: 140px;
             height: 60px;
             background-color: #fff;
             border: 1px solid #7D7D7D;
             border-radius: 12px;
             cursor: pointer;
+
+            @media (min-width: 768px) {
+              width: 180px;
+            }
       
             :hover {
               background-color: #4361EE;
@@ -83,7 +103,11 @@ export const Container = styled.div`
         }
 
         input {
-          max-width: 180px;
+          max-width: 138px;
+
+          @media (min-width: 768px) {
+            max-width: 180px;
+          }
         }
       }
 
@@ -92,7 +116,7 @@ export const Container = styled.div`
         align-items: center;
         justify-content: flex-end;
         width: 100%;
-        margin-top: 40px;
+        margin-top: 8px;
         
         button {
           width: 95px;

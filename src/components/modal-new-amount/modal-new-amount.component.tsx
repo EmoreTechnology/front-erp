@@ -9,7 +9,7 @@ interface INewAmountModalProps {
   onRequestClose: () => void;
 }
 
-const ModalNewAmount: React.FC<INewAmountModalProps> = ({ isOpen, onRequestClose }) => {
+const ModalNewAmount: React.FC<INewAmountModalProps> = ({ isOpen, onRequestClose, children }: any) => {
   return (
     <Modal
       className={"react-modal-content"}
@@ -42,7 +42,11 @@ const ModalNewAmount: React.FC<INewAmountModalProps> = ({ isOpen, onRequestClose
     >
       <Container>
         <div>
-          <h2>Adicionar nova quantidade</h2>
+          
+          <div className="top">
+            <h2>Adicionar nova quantidade</h2>
+            {children}
+          </div>
 
           <div className="content">
             <label htmlFor="">Código:</label>

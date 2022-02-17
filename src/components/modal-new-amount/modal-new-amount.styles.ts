@@ -22,10 +22,25 @@ export const Container = styled.div `
 		background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #004E89 0%, rgba(0, 78, 137, 0) 100%);
     border-radius: 16px;
 
+    > .top {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      > svg {
+        width: 35px;
+        height: 35px;
+      }
+
+      h2 {
+        font-size: 35px;
+      }
+    }
+
     > .content {
       display: flex;
       flex-direction: column;
-      width: 100%;
       align-items: start;
       justify-content: start;
 

@@ -1,6 +1,7 @@
 // Dependencies
 import React, { createContext, FormEvent, useState } from 'react';
 import Modal from 'react-modal';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Components
 import SelectComponent from '../select/select.component';
@@ -11,6 +12,9 @@ import { selectOptionMeasurement, selectOptionsCategories } from '../../utils/mo
 
 // Style
 import { Container } from './modal-products.styles';
+
+// Assets 
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 Modal.setAppElement("#root");
 
@@ -37,7 +41,7 @@ interface CreateProductsData {
 
 export const CreateProductsContext = createContext<CreateProductsData>({} as CreateProductsData);
 
-const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onRequestClose }) => {
+const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onRequestClose, children }: any) => {
   const [productTitle, setProductTitle] = useState<string>('');
   const [quantity, setQuantity] = useState<number>(0);
   const [shelfLife, setShelfLife] = useState<any>(new Date());
@@ -112,7 +116,11 @@ const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onReques
       <Container>
         <CreateProductsContext.Provider value={{ createProducts }}>
           <div>
-            <h2>Cadastro</h2>
+
+            <div className="top">
+              <h2>Cadastro</h2>
+              {children}
+            </div>
 
             <form onSubmit={handleCreateProducts}>
               <div className="left">
@@ -122,7 +130,7 @@ const ModalRegisterProducts: React.FC<IProductsModalProps> = ({ isOpen, onReques
                   type="text"
                   value={productTitle}
                   onChange={event => setProductTitle(event.target.value)}
-                  />
+                />
 
                 <label htmlFor="">Fornecedores:</label>
                 <input
