@@ -1,3 +1,4 @@
+import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -15,8 +16,9 @@ export const Container = styled.div`
 	> div {
 		display: flex;
 		flex-direction: column;
+    justify-content: space-between;
 		width: 100%;
-		padding: 28px;
+		padding: 20px;
 		opacity: 0.8;
 		background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #004E89 0%, rgba(0, 78, 137, 0) 100%);
     border-radius: 16px;
@@ -25,26 +27,36 @@ export const Container = styled.div`
       color: white;
 		}
 
-    h2 {
-      font-size: 40px;
+    > .top {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      > svg {
+        width: 35px;
+        height: 35px;
+      }
+
+      h2 {
+        font-size: 35px;
+      }
     }
 
 		> form {
       display: flex;
-			flex-direction: column;
+			flex-direction: row;
 			width: 100%;
+      justify-content: space-between;
       
-      @media (min-width: 768px) {
-        flex-direction: row;
-      }
-
 			> .left {
 				display: flex;
 				flex-direction: column;
 				width: 100%;
+        padding: 10px;
 
 				> label {
-					margin: 20px 0 5px 0;
+					margin: 10px 0 5px 0;
 					color: #000000;
 				}
 
@@ -63,7 +75,7 @@ export const Container = styled.div`
 				}
 				
 				> .select {
-					margin: 20px 0 0px 0;
+					margin: 10px 0 0px 0;
           
           p {
             margin-bottom: 5px;
@@ -75,9 +87,10 @@ export const Container = styled.div`
         display: flex;
 				flex-direction: column;
 				width: 100%;
+        padding: 10px;
         
 				> label {
-					margin: 20px 0 5px 0;
+					margin: 10px 0 5px 0;
 					color: #000000;
 				}
 				
@@ -109,7 +122,7 @@ export const Container = styled.div`
         }
 
 				> .select {
-					margin: 20px 0 0px 0;
+					margin: 10px 0 0px 0;
           
           p {
             margin-bottom: 5px;

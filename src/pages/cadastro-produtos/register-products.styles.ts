@@ -10,17 +10,29 @@ export const RegisterProdutsStyled = styled.div`
 
 	> .header {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		align-items: center;
 		justify-content: start;
 		padding: 10px;
 
-    > h1 {
-      font-size: 18px;
+    @media (min-width: 768) {
+      flex-direction: row;
+    }
 
-      @media (min-width: 768px) {
-        font-size: 38px;
-      }      
+    .home {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+
+      > h1 {
+        font-size: 18px;
+  
+        @media (min-width: 768px) {
+          font-size: 38px;
+        }      
+      }
     }
 
 		> .buttons {
@@ -28,7 +40,7 @@ export const RegisterProdutsStyled = styled.div`
 			flex-direction: row;
       width: 100%;
       justify-content: end;
-      margin-right: 20px;
+      padding: 10px;
 
 			> .register {
         background: #4361EE;
@@ -39,11 +51,16 @@ export const RegisterProdutsStyled = styled.div`
         background-color: rgb(117 111 111 / 0.3);
     		color: black;
 			}
+
+			> .new-amount {
+        background-color: rgb(117 111 111 / 0.3);
+    		color: black;
+			}
       
 			button {
         border-radius: 6px;
 				height: 40px;
-				width: 90px;
+				width: 100%;
 				border: none;
 				cursor: pointer;
 
@@ -74,29 +91,48 @@ export const RegisterProdutsStyled = styled.div`
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-between;
-			width: 71%;
+			width: 100%;
 			
 			> p {
 				font-size: 18px;
 			}
 		}
 	}
-
+  
 	button {
-		height: 40px;
+    height: 40px;
 		width: 120px;
 	}
-
+  
   .opneSidebar {
     transition: 0.7s;
     width: 100%;
     height: 100%;
     background-color: transparent;
   }
-
+  
   .menu-open {
     color: #000 !important;
     margin: 0px !important;
+  }
+  
+  .accordion-content {
+    display: list-item;
+
+    p + p {
+      display: flex;
+      margin: 0 0 8px 0px !important;
+    } 
+
+    p {
+      display: flex;
+      margin-bottom: 8px !important;
+    } 
+  
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   .to-right {

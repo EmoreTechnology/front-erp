@@ -13,7 +13,7 @@ interface IFilterModalProps {
   onRequestClose: () => void;
 }
 
-const ModalFilter: React.FC<IFilterModalProps> = ({ isOpen, onRequestClose }) => {
+const ModalFilter: React.FC<IFilterModalProps> = ({ isOpen, onRequestClose, children }: any) => {
   return (
     <Modal
       className={"react-modal-content"}
@@ -46,7 +46,10 @@ const ModalFilter: React.FC<IFilterModalProps> = ({ isOpen, onRequestClose }) =>
     >
       <Container>
         <div>
-          <h2>Filtrar</h2>
+          <div className="top">
+            <h2>Filtrar</h2>
+            {children}
+          </div>
 
           <div className="content">
             <label htmlFor="">Código:</label>
